@@ -1,0 +1,13 @@
+.footer {
+    background-color: #123ece;
+    color: rgb(248, 248, 248);
+    font-family: sans-serif;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.footer span{
+    display: block;
+    font-weight: bold;
+}

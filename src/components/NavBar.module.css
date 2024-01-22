@@ -1,0 +1,31 @@
+.header{
+    background-color: #123ece;
+    margin: 0px;
+    padding: 20px;
+}
+
+
+.navBar{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #ffffff;
+font-family: sans-serif;
+border-radius: 20px;
+margin: 0px;
+}
+
+.navBar h1{
+    color: rgb(0, 0, 0);
+}
+
+
+.logoGEPROSE{
+    max-height: 100px;
+    border-radius: 20px;
+}
+
+.logoTELE {
+    max-height: 100px;
+    border-radius: 20px;
+}
