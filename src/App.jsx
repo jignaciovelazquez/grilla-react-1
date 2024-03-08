@@ -3,6 +3,7 @@ import "./App.css";
 import Model from "./components/model";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import ToolBar from "./components/ToolBar";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,9 +11,9 @@ function App() {
   return (
     <div>
       <NavBar />
+      <ToolBar />
       <section>
-        <h1>Hola react!!!!!????????'</h1>
-        <Model />
+        <canvas id="canvas"></canvas>
       </section>
       <Footer />
     </div>

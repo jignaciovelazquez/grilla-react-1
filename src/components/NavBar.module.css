@@ -12,20 +12,20 @@ align-items: center;
 background-color: #ffffff;
 font-family: sans-serif;
 border-radius: 20px;
+padding: 10px;
 margin: 0px;
 }
 
 .navBar h1{
     color: rgb(0, 0, 0);
+    padding: 10px;
 }
 
 
 .logoGEPROSE{
     max-height: 100px;
-    border-radius: 20px;
 }
 
 .logoTELE {
     max-height: 100px;
-    border-radius: 20px;
 }

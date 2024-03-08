@@ -1,4 +1,18 @@
-section{
-    background-color: darkslategrey;
+div{
+    background-color: rgb(207, 219, 240);
     margin: 0px;
+}
+
+section{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+#canvas{
+    background-color: rgb(27, 33, 51);
+    height: 800px;
+    width: 1200px;
+    
+
 }

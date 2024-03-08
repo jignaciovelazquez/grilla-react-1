@@ -1,0 +1,10 @@
+.burbuja{
+    background-color: rgb(30, 190, 196);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.burbuja h2{
+    text-align: center;
+}

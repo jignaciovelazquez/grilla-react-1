@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import style from "./Model.module.css";
 
-function Model() {
-    return (
-        <div>
-            <h2>Titulo del modelo</h2>
-        </div>
-    )
+function Model(props) {
+  return (
+    <div className={style.burbuja}>
+      <h4>{props.id}</h4>
+    </div>
+  );
 }
 
-export default Model
+export default Model;

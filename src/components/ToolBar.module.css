@@ -1,0 +1,5 @@
+.bar{
+    background-color: brown;
+    display: flex;
+    gap: 5px;
+}
