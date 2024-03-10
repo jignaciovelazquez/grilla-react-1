@@ -4,7 +4,7 @@ import elementodered from "../data/Pasivos";
 import Model from "./model";
 
 const pasivosList = elementodered.map((ele) => {
-  return <Model id={ele.id} />;
+  return <Model id={ele.id} type={ele.type} />;
 });
 
 function ToolBar() {

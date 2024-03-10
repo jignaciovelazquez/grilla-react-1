@@ -5,6 +5,13 @@
     border-radius: 50%;
 }
 
+.burbuja2 {
+    background-color: rgb(12, 175, 47);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
 .burbuja h2{
     text-align: center;
 }

@@ -1,8 +1,39 @@
 const elementodered = [
     {
+        id:"AMP220",
+        name:"Amplificador 220v",
+        type: "activo",
+        image: "",
+        F_hight:40,
+        F_low:30,
+        R_hight:20,
+        R_low:20,
+    },
+    {
+        id:"AMP90",
+        name:"Amplificador 90v",
+        type: "activo",
+        image: "",
+        F_hight:40,
+        F_low:30,
+        R_hight:20,
+        R_low:20,
+    },
+    {
+        id:"REDUC_RED",
+        name:"reduccion de red",
+        type: "activo",
+        image: "",
+        F_hight:40,
+        F_low:30,
+        R_hight:20,
+        R_low:20,
+    },
+    {
         id:"DIVX2",
         name:"Divisor X2",
-        image:"",
+        type: "pasivo",
+        image: "",
         atenuacion:-4,
         insercion:-4,
 
@@ -10,34 +41,34 @@ const elementodered = [
     {
         id:"DIVX8",
         name:"Divisor X8",
-        image:"",
+        type: "pasivo",
+        image: "",
         atenuacion:-12,
         insercion:-1,
-
     },
     {
         id:"TAP20",
         name:"Tap Hot 20",
-        image:"",
+        type: "pasivo",
+        image: "",
         atenuacion:-20,
         insercion:-1,
-
     },
     {
         id:"TAP26",
         name:"Tap Hot 26",
-        image:"",
+        type: "pasivo",
+        image: "",
         atenuacion:-26,
         insercion:-0.5,
-
     },
     {
         id:"COP6",
         name:"Coupler 6",
-        image:"",
+        type: "pasivo",
+        image: "",
         atenuacion:-6,
         insercion:-2,
-
     }
 ]
 
