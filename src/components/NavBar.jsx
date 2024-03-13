@@ -5,22 +5,10 @@ function NavBar() {
   return (
     <div className={styles.header}>
       <div className={styles.navBar}>
-        <div>
-          <img
-            className={styles.logoGEPROSE}
-            src="https://i.postimg.cc/rFYhmWT9/logo-GPSfull.png"
-            alt="logo-GPSfull"
-          />
-        </div>
-
-        <h1>Generador de Tickets de Diseño</h1>
-
-        <div>
-          <img
-            className={styles.logoTELE}
-            src="https://i.postimg.cc/wT58H4LH/logotele-letra.jpg"
-          />
-        </div>
+        <img className={styles.logoNIVELMETER} 
+          src="../assets/L1-removebg-preview.png" 
+          alt="logo_NIVELMETER"
+        />
       </div>
     </div>
   );

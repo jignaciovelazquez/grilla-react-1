@@ -1,31 +1,18 @@
 .header{
-    background-color: #123ece;
+    background-color: #0455bf;
     margin: 0px;
     padding: 20px;
 }
 
-
 .navBar{
-display: flex;
-justify-content: space-between;
-align-items: center;
 background-color: #ffffff;
-font-family: sans-serif;
 border-radius: 20px;
-padding: 10px;
+padding: 0px;
 margin: 0px;
+text-align: center;
 }
 
-.navBar h1{
-    color: rgb(0, 0, 0);
-    padding: 10px;
+.logoNIVELMETER{
+    max-height: 150px;
 }
 
-
-.logoGEPROSE{
-    max-height: 100px;
-}
-
-.logoTELE {
-    max-height: 100px;
-}

@@ -1,5 +1,6 @@
 .bar{
-    background-color: brown;
+    background-color: #021e72;
     display: flex;
     gap: 5px;
+    padding: 0.5rem;
 }

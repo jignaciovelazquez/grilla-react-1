@@ -32,7 +32,7 @@ const elementodered = [
     {
         id:"DIVX2",
         name:"Divisor X2",
-        type: "pasivo",
+        type: "tap",
         image: "",
         atenuacion:-4,
         insercion:-4,
