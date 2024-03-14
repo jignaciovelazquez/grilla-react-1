@@ -1,10 +1,9 @@
-import React from "react";
 import styles from "./ToolBar.module.css";
-import elementodered from "../data/Pasivos";
+import { elementodered } from "../data/pasivos";
 import Model from "./model";
 
-const pasivosList = elementodered.map((ele) => {
-  return <Model id={ele.id} type={ele.type} />;
+const pasivosList = elementodered.map(({id, type}) => {
+  return <Model key={`key${id}`} id={id} type={type} />;
 });
 
 function ToolBar() {
