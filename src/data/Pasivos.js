@@ -1,4 +1,5 @@
-const elementodered = [
+
+export const elementodered = [
     {
         id:"AMP220",
         name:"Amplificador 220v",
@@ -70,6 +71,4 @@ const elementodered = [
         atenuacion:-6,
         insercion:-2,
     }
-]
-
-export default elementodered;
+];

@@ -1,35 +1,38 @@
-import React from "react";
 import style from "./Model.module.css";
+import PropTypes from 'prop-types';
 
 function Model(props) {
-  if (props.type == "pasivo"){
+  if (props.type === "pasivo") {
     return (
       <div className={style.container}>
         <div className={style.coupler}>
-          <spam>{props.id}</spam>
+          <span>{props.id}</span>
         </div>
       </div>
-    )
+    );
   }
-  if(props.type == "tap"){
+  if (props.type === "tap") {
     return (
       <div className={style.container}>
         <div className={style.square}>
-          <spam>{props.id}</spam>
+          <span>{props.id}</span>
         </div>	
       </div>
-    )
-  }
-  else{
+    );
+  } else {
     return (
       <div className={style.container}>
         <div className={style.triangle}>
-          <spam>{props.id}</spam>
+          <span>{props.id}</span>
         </div>
       </div>
-    )
-
+    );
   }
+}
+
+Model.propTypes = {
+  type: PropTypes.string,
+  id: PropTypes.string
 }
 
 export default Model;
