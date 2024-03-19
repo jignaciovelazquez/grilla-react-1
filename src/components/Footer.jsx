@@ -8,7 +8,7 @@ function Footer() {
       </p>
       <p>By Ing. Ignacio Velazquez</p>
       <p>jignaciovelazquez@gmail.com</p>
-      <p>V0.1</p>
+      <p>V0.0.1</p>
     </div>
   );
 }

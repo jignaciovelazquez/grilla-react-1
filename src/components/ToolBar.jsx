@@ -1,6 +1,6 @@
 import styles from "./ToolBar.module.css";
 import { elementodered } from "../data/pasivos";
-import Model from "./model";
+import Model from "./Model";
 
 const pasivosList = elementodered.map(({id, type}) => {
   return <Model key={`key${id}`} id={id} type={type} />;
