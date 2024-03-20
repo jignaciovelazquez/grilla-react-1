@@ -14,21 +14,39 @@ export function DialogEditElement({ setOpenModal }) {
           </button>
         </div>
         <div className="title">
-          <h1>Edit Network Element</h1>
+          <h1>Editar Elemento de Red</h1>
         </div>
         <div className="body">
-          <p>add form here!</p>
+          <div className="">
+            
+          </div>
+          <div>
+            <label htmlFor="">F_hight:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label htmlFor="">F_low:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label htmlFor="">R_hight:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label htmlFor="">R_low:</label>
+            <input type="text" />
+          </div>
         </div>
         <div className="footer">
           <button
+            id="cancelBtn"
             onClick={() => {
               setOpenModal(false);
             }}
-            id="cancelBtn"
           >
-            Cancel
+            Cancelar
           </button>
-          <button>Save</button>
+          <button>Guardar</button>
         </div>
       </div>
     </div>

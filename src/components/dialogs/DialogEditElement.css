@@ -33,17 +33,46 @@
 .titleCloseBtn button {
   background-color: transparent;
   border: none;
-  font-size: 25px;
+  font-size: 18px;
   cursor: pointer;
 }
 
 .modalContainer .body {
   flex: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
+}
+
+.modalContainer .body div {
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 1px;
+}
+
+.modalContainer .body div input {
+  font: inherit;
+  letter-spacing: inherit;
+  color: currentcolor;
+  border: 4px;
+  border-radius: 10px;
+  box-sizing: content-box;
+  background: rgb(224, 224, 224);
+  height: 1em;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  animation-name: mui-auto-fill-cancel;
+  animation-duration: 10ms;
+  padding: 25px 12px 8px;
 }
 
 .modalContainer .footer {
