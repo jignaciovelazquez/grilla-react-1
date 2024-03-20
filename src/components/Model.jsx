@@ -1,5 +1,6 @@
 import style from "./Model.module.css";
 import PropTypes from 'prop-types';
+import { Hexagonal } from "./figures/hexagonal/Hexagonal";
 
 function Model(props) {
   if (props.type === "pasivo") {
@@ -13,11 +14,13 @@ function Model(props) {
   }
   if (props.type === "tap") {
     return (
+      //   <div className={style.square}>
+      //     <span>{props.id}</span>
+      //   </div>	
       <div className={style.container}>
-        <div className={style.square}>
-          <span>{props.id}</span>
-        </div>	
+        <Hexagonal id={props.id} />
       </div>
+      
     );
   } else {
     return (
