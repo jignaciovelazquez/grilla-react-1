@@ -13,16 +13,14 @@ function ToolBar() {
         key={`key${id}`}
         id={id}
         type={type}
+        updateElementNetwork={setModalOpen}
       />
     );
   });
 
   return (
     <div>
-      <div className={styles.bar} onClick={() => {
-          console.log('please open the modal');
-          setModalOpen(true);
-        }}>{pasivosList}</div>
+      <div className={styles.bar}>{pasivosList}</div>
       {isDialogOpen && <DialogEditElement setOpenModal={setModalOpen} />}
     </div>
   );
