@@ -41,7 +41,6 @@ function DragDrop() {
         setBoard([pictureDrop[0]]);
     };
 
-
     return (
         <>
             <div></div>

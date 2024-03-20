@@ -4,14 +4,11 @@ div{
 }
 
 section{
+    background-color: #011140;
+    height: 500px;
     text-align: center;
     justify-content: center;
     display: block;
-}
-
-#canvas{
-    background-color: #011140;
-    height: 800px;
 }
 
 .Board{

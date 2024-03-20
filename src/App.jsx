@@ -14,12 +14,11 @@ function App() {
       
       <NavBar />
       <ToolBar />
-      <section>
-        <canvas id="canvas"></canvas>
+      <section id="canvas">
+        <DndProvider backend={HTML5Backend}>
+          <DragDrop />
+        </DndProvider>
       </section>
-      <DndProvider backend={HTML5Backend}>
-        <DragDrop />
-      </DndProvider>
       <Footer />
     </>
   );

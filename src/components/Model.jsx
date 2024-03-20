@@ -1,21 +1,21 @@
 import style from "./Model.module.css";
 import PropTypes from 'prop-types';
 
-function Model(props) {
-  if (props.type === "pasivo") {
+function Model({id, type}) {
+  if (type === "pasivo") {
     return (
       <div className={style.container}>
         <div className={style.coupler}>
-          <span>{props.id}</span>
+          <span>{id}</span>
         </div>
       </div>
     );
   }
-  if (props.type === "tap") {
+  if (type === "tap") {
     return (
       <div className={style.container}>
         <div className={style.square}>
-          <span>{props.id}</span>
+          <span>{id}</span>
         </div>	
       </div>
     );
@@ -23,7 +23,7 @@ function Model(props) {
     return (
       <div className={style.container}>
         <div className={style.triangle}>
-          <span>{props.id}</span>
+          <span>{id}</span>
         </div>
       </div>
     );
