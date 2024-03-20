@@ -1,5 +1,5 @@
 import styles from "./ToolBar.module.css";
-import { elementodered } from "../data/pasivos";
+import { elementodered } from "../data/Pasivos";
 import Model from "./model";
 
 const pasivosList = elementodered.map(({id, type}) => {
@@ -8,9 +8,7 @@ const pasivosList = elementodered.map(({id, type}) => {
 
 function ToolBar() {
   return (
-    <div>
       <div className={styles.bar}>{pasivosList}</div>
-    </div>
   );
 }
 
