@@ -10,8 +10,14 @@ function Pictures({id, url}) {
     }));
 
     return (
-        <img ref={drag} id={id} src={url} width="90px" style={{border: isDragging ? "5px solid pink" : "0px"}}/>
-    )
+        <img 
+            ref={drag} 
+            id={id} 
+            src={url} 
+            width="90px" 
+            style={{border: isDragging ? "5px solid pink" : "0px"}}
+        />
+    );
 }
 
 export default Pictures

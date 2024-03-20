@@ -22,11 +22,9 @@ const PictureList = [
     }
 ];
 
-console.log("PictureList: ",PictureList);
-console.log("id: ",PictureList[0].id);
-console.log("url: ",PictureList[1].url);
 
 function DragDrop() {
+
     const [board, setBoard] = useState ([]);
 
     const [{isOver}, drop] = useDrop(() => ({
@@ -36,16 +34,13 @@ function DragDrop() {
             isOver: !!monitor.isOver(),
         }),
     }));
-//******************************************************************************************** */
+
     const addImageToBoard = (iden) => {
-        console.log(iden)
-        const pictureDrop = PictureList.filter((picture) => {
-            console.log(iden)
-            console.log(picture.id)
-            iden === picture.id
-        });
-        //setBoard([pictureDrop[0]]);
+        const pictureDrop = PictureList.filter((picture) => iden === picture.id);
+        //setBoard((board) => [...board, pictureDrop[0]]);
+        setBoard([pictureDrop[0]]);
     };
+
 
     return (
         <>
@@ -58,10 +53,13 @@ function DragDrop() {
 
             }</div>
             <br></br>
-            <div className="Board" ref={drop}>{board.map(() => {
+            <div className="Board" ref={drop}> 
+                {board.map(({id, url}) => {
                 return <Pictures key={`key1${id}`} id={id} url={url} />
                 })}
             </div>
+
+
         </>
     )
 }
