@@ -1,0 +1,44 @@
+
+.hexagonWrapper {
+  /*   margin: auto; */
+  /*   display: flex; */
+    text-align: initial;
+    width: 200px;
+    height: 200px; 
+    cursor: pointer;
+  }
+  
+  .hexagon {
+    position: relative;
+    width: 46%;
+    height: 80%;
+    margin: auto;
+    color: white;
+    background: green;
+    border: black;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    transition: 0.5s;
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+    position: absolute;
+    content: "";
+    background: inherit;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  .hexagon:before {
+    transform: rotateZ(60deg);
+  }
+  .hexagon:after {
+    transform: rotateZ(-60deg);
+  }
+
+  
+  
