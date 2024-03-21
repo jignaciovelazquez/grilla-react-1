@@ -9,16 +9,20 @@ import ToolBar from "./components/ToolBar";
 import DragDrop from "./components/DragDrop";
 
 function App() {
+
+
+
   return (
     <>
       
-      <NavBar />
-      <ToolBar />
-      <section id="canvas">
-        <DndProvider backend={HTML5Backend}>
-          <DragDrop />
+      <DndProvider backend={HTML5Backend}>
+        <NavBar />
+        <ToolBar />
+        <section id="canvas">
+          <h1>Arrastre los elementos del Armado</h1>
+            <DragDrop />
+        </section>
         </DndProvider>
-      </section>
       <Footer />
     </>
   );

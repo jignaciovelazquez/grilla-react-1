@@ -1,0 +1,12 @@
+.Board {
+    border: 2px solid black;
+    height: 120px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+    margin: auto;
+}
+
