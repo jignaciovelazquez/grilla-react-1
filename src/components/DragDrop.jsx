@@ -6,7 +6,9 @@ import "../App.css";
 import styles from "./DragDrop.module.css"
 
 
-function DragDrop() {
+function DragDrop({addMensaje}) {
+
+    const enviarMensaje = (board) => { addMensaje(board) }
 
     const [board, setBoard] = useState ([]);
 
@@ -28,7 +30,8 @@ function DragDrop() {
     return (
         <>
             <div className={styles.Board} ref={drop}> 
-                {console.log("Arreglo de elementos",board)}
+                {(enviarMensaje(board))}
+                {/*console.log("Arreglo de elementos",board)*/}
                 {board.map(({id, type},index) => {
                     return <Model key={`key${index}`} id={id} type={type} />;
                 })}
