@@ -10,13 +10,13 @@ import DragDrop from "./components/DragDrop";
 
 function App() {
   
-  const [mostrarArreglo, setMostrarArreglo] = useState("")
+  const [ShowArray, setShowArray] = useState("")
   
-  const inMensaje = (arreglo) => { 
-    setMostrarArreglo(arreglo) 
+  const inMensaje = (array) => { 
+    setShowArray(array) 
   }
   
-  console.log("Arreglo desde APP",mostrarArreglo);
+  console.log("Arreglo desde APP",ShowArray);
 
   return (
     <>
