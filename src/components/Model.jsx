@@ -4,7 +4,7 @@ import { useDrag } from "react-dnd";
 
 function Model({id, type}) {
 
-  const [{isDragging}, drag] = useDrag(() => ({
+  const [, drag] = useDrag(() => ({
       type: "image",
       item: {id: id},
       collect: (monitor) => ({

@@ -1,5 +1,5 @@
 
-export const elementodered = [
+export const redElement = [
     {
         id:"AMP220",
         name:"Amplificador 220v",

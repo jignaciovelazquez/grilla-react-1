@@ -1,13 +1,12 @@
 .footer {
     background-color: #0455bf;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-family: sans-serif;
     text-align: center;
+    align-items: center;
     padding: 10px;
-
 }
 
-span{
-    display: block;
-    font-weight: bold;
+p{
+    margin: 0;
 }
