@@ -3,41 +3,41 @@ import { elementodered } from "../data/pasivos";
 import Model from "./Model";
 import { useDrop } from "react-dnd";
 import "../App.css";
-import styles from "./DragDrop.module.css"
+import styles from "./DragDrop.module.css";
 
+function DragDrop({ addMensaje }) {
+  const enviarMensaje = (board) => {
+    addMensaje(board);
+  };
 
-function DragDrop({addMensaje}) {
+  const [board, setBoard] = useState([]);
 
-    const enviarMensaje = (board) => { addMensaje(board) }
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "image",
+    drop: (item) => addImageToBoard(item.id),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  }));
 
-    const [board, setBoard] = useState ([]);
+  const addImageToBoard = (iden) => {
+    const pictureDrop = elementodered.filter((picture) => iden === picture.id);
+    setBoard((board) => [...board, pictureDrop[0]]);
 
-    const [{isOver}, drop] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImageToBoard(item.id),
-        collect: (monitor) => ({
-            isOver: !!monitor.isOver(),
-        }),
-    }));
+    //setBoard([pictureDrop[0]]);
+  };
 
-    const addImageToBoard = (iden) => {
-        const pictureDrop = elementodered.filter((picture) => iden === picture.id);
-        setBoard((board) => [...board, pictureDrop[0]]);
-        
-        //setBoard([pictureDrop[0]]);
-    };
-
-    return (
-        <>
-            <div className={styles.Board} ref={drop}> 
-                {(enviarMensaje(board))}
-                {/*console.log("Arreglo de elementos",board)*/}
-                {board.map(({id, type},index) => {
-                    return <Model key={`key${index}`} id={id} type={type} />;
-                })}
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className={styles.Board} ref={drop}>
+        {enviarMensaje(board)}
+        {/*console.log("Arreglo de elementos",board)*/}
+        {board.map(({ id, type }, index) => {
+          return <Model key={`key${index}`} id={id} type={type} />;
+        })}
+      </div>
+    </>
+  );
 }
 
-export default DragDrop
+export default DragDrop;
