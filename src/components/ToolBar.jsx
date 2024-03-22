@@ -1,11 +1,9 @@
 import styles from "./ToolBar.module.css";
-import { redElement } from "../data/pasivos";
-import Model from "./Model";
+import { networkElement } from "../data/passives";
+import ModelList from "./ModelList";
 
-
-
-const elementList = redElement.map(({id, type}) => {
-  return <Model key={`key${id}`} id={id} type={type} />;
+const elementList = networkElement.map(({ id, type }) => {
+  return <ModelList key={`key${id}`} id={id} type={type} />;
 });
 
 function ToolBar() {
