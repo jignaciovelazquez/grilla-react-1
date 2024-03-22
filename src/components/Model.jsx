@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 
 function Model(props) {
 
-  const getStyleFigure = () => {
-
-    if (props.type === "pasivo") {
+  const getFigureClassName = (type) => {
+    if (type === "pasivo") {
       return style.coupler;
-    } else if (props.type === "tap") {
+    } else if (type === "tap") {
       return style.square; // should be hexagon figure instead
     } else {
       return style.triangle;
@@ -16,7 +15,7 @@ function Model(props) {
 
   return (
     <div className={style.container} onClick={props.updateElementNetwork}>
-      <div className={getStyleFigure()}>
+      <div className={getFigureClassName(props.type)}>
         <span>{props.id}</span>
       </div>
     </div>
