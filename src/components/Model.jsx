@@ -1,8 +1,8 @@
-import style from "./ModelList.module.css";
+import style from "./Model.module.css";
 import PropTypes from "prop-types";
 import { useDrag } from "react-dnd";
 
-function ModelList({ id, type }) {
+function Model({ id, type }) {
   const [, drag] = useDrag(() => ({
     type: "image",
     item: { id: id },
@@ -39,9 +39,9 @@ function ModelList({ id, type }) {
   }
 }
 
-ModelList.propTypes = {
+Model.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
 };
 
-export default ModelList;
+export default Model;

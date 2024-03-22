@@ -1,5 +1,5 @@
 import { networkElement } from "../data/passives";
-import ModelList from "./ModelList";
+import Model from "./Model";
 import { useState } from "react";
 import { useDrop } from "react-dnd";
 import styles from "./DragDrop.module.css";
@@ -26,7 +26,7 @@ function DragDrop() {
       <div className={styles.Board} ref={drop}>
         {/*console.log("Arreglo de elementos",board)*/}
         {board.map(({ id, type }, index) => {
-          return <ModelList key={`key${index}`} id={id} type={type} />;
+          return <Model key={`key${index}`} id={id} type={type} />;
         })}
       </div>
     </>
