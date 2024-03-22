@@ -1,5 +1,5 @@
 import styles from "./ToolBar.module.css";
-import { redElement } from "../data/pasivos";
+import { networkElement } from "../data/pasivos";
 import Model from "./Model";
 
 
