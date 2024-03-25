@@ -1,16 +1,14 @@
-div{
-    background-color: #ffffff;
-    margin: 0px;
-}
-
 section{
+    background-color: #011140;
+    height: 500px;
     text-align: center;
     justify-content: center;
-    display: flex;
+    align-content: center;
+    display: block;
+    padding-top: 20px;
 }
 
-#canvas{
-    background-color: #011140;
-    height: 800px;
-    width: 1200px;
+h1 {
+    color: whitesmoke;
+    font-size: 3rem;
 }

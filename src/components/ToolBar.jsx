@@ -1,16 +1,16 @@
 import styles from "./ToolBar.module.css";
-import { elementodered } from "../data/pasivos";
-import Model from "./model";
+import { networkElement } from "../data/passives";
+import Model from "./Model";
 
-const pasivosList = elementodered.map(({id, type}) => {
+const modelList = networkElement.map(({ id, type }) => {
   return <Model key={`key${id}`} id={id} type={type} />;
 });
 
 function ToolBar() {
   return (
-    <div>
-      <div className={styles.bar}>{pasivosList}</div>
-    </div>
+    <>
+      <div className={styles.bar}>{modelList}</div>
+    </>
   );
 }
 
