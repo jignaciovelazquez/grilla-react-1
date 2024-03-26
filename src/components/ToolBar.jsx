@@ -1,10 +1,15 @@
 import styles from "./ToolBar.module.css";
-import { elementodered } from "../data/pasivos";
-import Model from "./model";
-import { DialogEditElement } from "./dialogs/DialogEditElement";
-import { useState } from "react";
+import Model from "./Model";
+import { useContext } from "react";
+import { PassivesContext } from "../context/Contexts";
 
 function ToolBar() {
+  
+  const networkElements = useContext(PassivesContext);
+  const modelList = networkElements.map(({ id, type }) => {
+    return <Model key={`key${id}`} id={id} type={type} />;
+  });
+
   const [isDialogOpen, setModalOpen] = useState(false);
 
   const pasivosList = elementodered.map(({ id, type }) => {
@@ -19,10 +24,10 @@ function ToolBar() {
   });
 
   return (
-    <div>
-      <div className={styles.bar}>{pasivosList}</div>
+    <>
+      <div className={styles.bar}>{modelList}</div>
       {isDialogOpen && <DialogEditElement setOpenModal={setModalOpen} />}
-    </div>
+    </>
   );
 }
 

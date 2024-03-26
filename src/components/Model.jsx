@@ -1,32 +1,48 @@
 import style from "./Model.module.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import { useDrag } from "react-dnd";
 
-function Model(props) {
+function Model({ id, type }) {
+  const [, drag] = useDrag(() => ({
+    type: "image",
+    item: { id: id },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
 
-  const getFigureClassName = (type) => {
-    if (type === "pasivo") {
-      return style.coupler;
-    } else if (type === "tap") {
-      return style.square; // should be hexagon figure instead
-    } else {
-      return style.triangle;
-    }
-  }
-
-  return (
-    <div className={style.container} onClick={props.updateElementNetwork}>
-      <div className={getFigureClassName(props.type)}>
-        <span>{props.id}</span>
+  if (type === "pasivo") {
+    return (
+      <div className={style.container} ref={drag}>
+        <div className={style.coupler}>
+          <span>{id}</span>
+        </div>
       </div>
-    </div>
-  );
-
+    );
+  }
+  if (type === "tap") {
+    return (
+      <div className={style.container} ref={drag}>
+        <div className={style.square}>
+          <span>{id}</span>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className={style.container} ref={drag}>
+        <div className={style.triangle}>
+          <span>{id}</span>
+        </div>
+      </div>
+    );
+  }
 }
 
 Model.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
-  updateElementNetwork: PropTypes.func
-}
+  updateElementNetwork: PropTypes.func,
+};
 
 export default Model;
