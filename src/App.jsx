@@ -5,17 +5,21 @@ import NavBar from "./components/NavBar";
 import ToolBar from "./components/ToolBar";
 import DragDrop from "./components/DragDrop";
 import "./App.css";
+import {PassivesContext} from "./context/Contexts";
+import {networkElement} from "./data/passives";
 
 function App() {
   return (
     <>
+      <NavBar />
       <DndProvider backend={HTML5Backend}>
-        <NavBar />
-        <ToolBar />
-        <section>
-          <h1>Arrastre los elementos del Armado</h1>
-          <DragDrop />
-        </section>
+        <PassivesContext.Provider value={networkElement} >
+          <ToolBar />
+          <section>
+            <h1>Arrastre los elementos del Armado</h1>
+            <DragDrop />
+          </section>
+        </PassivesContext.Provider>
       </DndProvider>
       <Footer />
     </>
