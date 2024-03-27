@@ -46,7 +46,7 @@ export function EditActiveElement({ id, setCloseModal }) {
   );
 }
 
-EditPassiveElement.propTypes = {
+EditActiveElement.propTypes = {
   id: PropTypes.string,
   setCloseModal: PropTypes.func,
 };
