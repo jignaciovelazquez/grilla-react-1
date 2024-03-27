@@ -14,19 +14,21 @@ import { EditPassiveElement } from "./components/dialogs/EditPassiveElement";
 function App() {
   const [isDialogActiveOpen, openCloseActiveDialog] = useState(false);
   const [isDialogPassiveOpen, openClosePassiveDialog] = useState(false);
+  const [elementId, setElementId] = useState("");
 
-  const openDialog = (params, typeElement) => {
-    if (typeElement === 'tap' || typeElement === 'pasivo') {
+  const openDialog = (id, typeElement) => {
+    setElementId(id);
+    if (typeElement === "tap" || typeElement === "pasivo") {
       openClosePassiveDialog(true);
     } else {
-      openCloseActiveDialog(params);
+      openCloseActiveDialog(true);
     }
-  }
+  };
 
   if (isDialogActiveOpen || isDialogPassiveOpen) {
-    document.body.classList.add('active-modal')
+    document.body.classList.add("active-modal");
   } else {
-    document.body.classList.remove('active-modal')
+    document.body.classList.remove("active-modal");
   }
 
   return (
@@ -34,8 +36,18 @@ function App() {
       <NavBar />
       <DndProvider backend={HTML5Backend}>
         <PassivesContext.Provider value={networkElement}>
-          {isDialogActiveOpen && <EditActiveElement setCloseModal={openCloseActiveDialog} />}
-          {isDialogPassiveOpen && <EditPassiveElement setCloseModal={openClosePassiveDialog} />}
+          {isDialogActiveOpen && (
+            <EditActiveElement
+              id={elementId}
+              setCloseModal={openCloseActiveDialog}
+            />
+          )}
+          {isDialogPassiveOpen && (
+            <EditPassiveElement
+              id={elementId}
+              setCloseModal={openClosePassiveDialog}
+            />
+          )}
           <ToolBar setOpenCloseModal={openDialog} />
           <section>
             <h1>Arrastre los elementos del Armado</h1>
