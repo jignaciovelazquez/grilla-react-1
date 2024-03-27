@@ -3,32 +3,15 @@ import Model from "./Model";
 import { useContext } from "react";
 import { PassivesContext } from "../context/Contexts";
 
-function ToolBar() {
+function ToolBar({setOpenCloseModal}) {
   
   const networkElements = useContext(PassivesContext);
+
   const modelList = networkElements.map(({ id, type }) => {
-    return <Model key={`key${id}`} id={id} type={type} />;
+    return <Model key={`key${id}`} id={id} type={type} updateElementNetwork={setOpenCloseModal} />;
   });
 
-  const [isDialogOpen, setModalOpen] = useState(false);
-
-  const pasivosList = elementodered.map(({ id, type }) => {
-    return (
-      <Model
-        key={`key${id}`}
-        id={id}
-        type={type}
-        updateElementNetwork={setModalOpen}
-      />
-    );
-  });
-
-  return (
-    <>
-      <div className={styles.bar}>{modelList}</div>
-      {isDialogOpen && <DialogEditElement setOpenModal={setModalOpen} />}
-    </>
-  );
+  return <div className={styles.bar}>{modelList}</div>;
 }
 
 export default ToolBar;
