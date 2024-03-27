@@ -22,7 +22,11 @@ function Model({ id, type, updateElementNetwork }) {
   };
 
   const openDialog = () => {
-    updateElementNetwork(id, type);
+    // This validation was added in order to cover the implementation on component DragDrop
+    // preventing the error when the user hit the click like models can do at the toolbar
+    if (updateElementNetwork !== undefined) {
+      updateElementNetwork(id, type);
+    }
   };
 
   return (
