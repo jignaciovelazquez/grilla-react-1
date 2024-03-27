@@ -22,8 +22,8 @@ function Model({ id, type, updateElementNetwork }) {
   };
 
   const openDialog = () => {
-    updateElementNetwork(true, type);
-  }
+    updateElementNetwork(id, type);
+  };
 
   return (
     <div className={style.container} ref={drag} onClick={openDialog}>
