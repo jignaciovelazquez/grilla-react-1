@@ -1,19 +1,20 @@
 import "./EditPassiveElement.css";
+import PropTypes from "prop-types";
 
-export function EditPassiveElement({ setCloseModal }) {
-
-  const toggleModal = () => {
-    setCloseModal(false);
-  };
-
+export function EditPassiveElement({ id, setCloseModal }) {
   return (
     <div className="modal">
-      <div onClick={toggleModal} className="overlay"></div>
+      <div
+        onClick={() => {
+          setCloseModal(false);
+        }}
+        className="overlay"
+      ></div>
       <div className="modal-content">
         <h2>Editar Elemento de Red</h2>
         <div>
-          <label htmlFor="Atenuation">Atenuación:</label>
-          <input id="Atenuation" type="number" />
+          <label htmlFor="Attenuation">Atenuación:</label>
+          <input id="Attenuation" type="number" />
         </div>
         <div>
           <label htmlFor="Insertion">Inserción:</label>
@@ -34,3 +35,8 @@ export function EditPassiveElement({ setCloseModal }) {
     </div>
   );
 }
+
+EditPassiveElement.propTypes = {
+  id: PropTypes.string,
+  setCloseModal: PropTypes.func,
+};
