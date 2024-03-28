@@ -12,8 +12,12 @@ import { EditActiveElement } from "./components/dialogs/EditActiveElement";
 import { EditPassiveElement } from "./components/dialogs/EditPassiveElement";
 
 function App() {
+  // dialogs
   const [isDialogActiveOpen, openCloseActiveDialog] = useState(false);
   const [isDialogPassiveOpen, openClosePassiveDialog] = useState(false);
+  // update network elements
+  const [networkElements, setNetworkElement] = useState(networkElement);
+  // id model selected
   const [elementId, setElementId] = useState("");
 
   const openDialog = (id, typeElement) => {
@@ -35,10 +39,10 @@ function App() {
     <>
       <NavBar />
       <DndProvider backend={HTML5Backend}>
-        <PassivesContext.Provider value={networkElement}>
+        <PassivesContext.Provider value={networkElements}>
           {isDialogActiveOpen && (
             <EditActiveElement
-              id={elementId}
+              id={elementId} 
               setCloseModal={openCloseActiveDialog}
             />
           )}
@@ -46,6 +50,7 @@ function App() {
             <EditPassiveElement
               id={elementId}
               setCloseModal={openClosePassiveDialog}
+              updatePassiveSelected={setNetworkElement}
             />
           )}
           <ToolBar setOpenCloseModal={openDialog} />
