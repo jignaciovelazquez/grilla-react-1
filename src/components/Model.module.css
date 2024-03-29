@@ -4,50 +4,45 @@
   width: 5rem;
   border-radius: 20%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  place-content: space-evenly;
   cursor: pointer;
 }
 
 .coupler {
   background-color: black;
-  height: 55px;
-  width: 55px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   padding: 1px;
-  position: relative;
 }
 
 .triangle {
-  background-color: #033f8d;
-  width: 58px;
-  height: 58px;
-  background: red;
-  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #f00;
 }
 
 .square {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #555;
+  width: 30px;
+  height: 30px;
+  border: 0px solid #555;
+  border-radius: 3px;
   background: #056bf1;
-  position: relative;
 }
 
 span {
-  position: absolute;
+  /* position: absolute; */
   width: fit-content;
   margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
   text-align: center;
   font-weight: bold;
   line-height: 25px;
   color: #fff;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
-  font-size: 0.85rem;
+  font-size: 14px;
 }

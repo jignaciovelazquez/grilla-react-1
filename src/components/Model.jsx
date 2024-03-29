@@ -15,8 +15,8 @@ function Model({ id, type }) {
     return (
       <div className={style.container} ref={drag}>
         <div className={style.coupler}>
-          <span>{id}</span>
         </div>
+          <span>{id}</span>
       </div>
     );
   }
@@ -24,16 +24,16 @@ function Model({ id, type }) {
     return (
       <div className={style.container} ref={drag}>
         <div className={style.square}>
-          <span>{id}</span>
         </div>
+          <span>{id}</span>
       </div>
     );
   } else {
     return (
       <div className={style.container} ref={drag}>
         <div className={style.triangle}>
-          <span>{id}</span>
         </div>
+          <span>{id}</span>
       </div>
     );
   }
