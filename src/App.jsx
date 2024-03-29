@@ -44,6 +44,7 @@ function App() {
             <EditActiveElement
               id={elementId} 
               setCloseModal={openCloseActiveDialog}
+              updateActiveSelected={setNetworkElement}
             />
           )}
           {isDialogPassiveOpen && (
