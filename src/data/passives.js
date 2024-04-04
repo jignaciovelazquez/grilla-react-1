@@ -20,7 +20,7 @@ export const networkElement = [
     R_low: 20,
   },
   {
-    id: "REDUC_RED",
+    id: "REDUC",
     name: "reduccion de red",
     type: "activo",
     image: "",

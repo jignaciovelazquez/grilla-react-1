@@ -14,26 +14,23 @@ function Model({ id, type }) {
   if (type === "pasivo") {
     return (
       <div className={style.container} ref={drag}>
-        <div className={style.coupler}>
-          <span>{id}</span>
-        </div>
+        <div className={style.coupler}></div>
+        <span>{id}</span>
       </div>
     );
   }
   if (type === "tap") {
     return (
       <div className={style.container} ref={drag}>
-        <div className={style.square}>
-          <span>{id}</span>
-        </div>
+        <div className={style.square}></div>
+        <span>{id}</span>
       </div>
     );
   } else {
     return (
       <div className={style.container} ref={drag}>
-        <div className={style.triangle}>
-          <span>{id}</span>
-        </div>
+        <div className={style.triangle}></div>
+        <span>{id}</span>
       </div>
     );
   }
