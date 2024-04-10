@@ -13,12 +13,12 @@ import { EditPassiveElement } from "./components/dialogs/EditPassiveElement";
 
 function App() {
   // dialogs
-  const [isDialogActiveOpen, openCloseActiveDialog] = useState(false);
-  const [isDialogPassiveOpen, openClosePassiveDialog] = useState(false);
+  const [isDialogActiveOpened, openCloseActiveDialog] = useState(false);
+  const [isDialogPassiveOpened, openClosePassiveDialog] = useState(false);
   // update network elements
   const [networkElements, setNetworkElement] = useState(networkElement);
   // id model selected
-  const [elementId, setElementId] = useState("");
+  const [networkElementId, setElementId] = useState("");
 
   const openDialog = (id, typeElement) => {
     setElementId(id);
@@ -29,27 +29,23 @@ function App() {
     }
   };
 
-  if (isDialogActiveOpen || isDialogPassiveOpen) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
-
   return (
     <>
       <NavBar />
       <DndProvider backend={HTML5Backend}>
         <PassivesContext.Provider value={networkElements}>
-          {isDialogActiveOpen && (
+          {isDialogActiveOpened && (
             <EditActiveElement
-              id={elementId} 
+              isOpened={isDialogActiveOpened}
+              networkElementId={networkElementId} 
               setCloseModal={openCloseActiveDialog}
               updateActiveSelected={setNetworkElement}
             />
           )}
-          {isDialogPassiveOpen && (
+          {isDialogPassiveOpened && (
             <EditPassiveElement
-              id={elementId}
+              isOpened={isDialogPassiveOpened}
+              networkElementId={networkElementId}
               setCloseModal={openClosePassiveDialog}
               updatePassiveSelected={setNetworkElement}
             />

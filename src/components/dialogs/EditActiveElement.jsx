@@ -3,7 +3,12 @@ import "./EditActiveElement.css";
 import PropTypes from "prop-types";
 import { PassivesContext } from "../../context/Contexts";
 
-export function EditActiveElement({ networkElementId, setCloseModal, updateActiveSelected }) {
+export function EditActiveElement({
+  isOpened,
+  networkElementId,
+  setCloseModal,
+  updateActiveSelected,
+}) {
   const networkElements = useContext(PassivesContext);
 
   const { name, F_hight, F_low, R_hight, R_low } = networkElements.find(
@@ -16,6 +21,12 @@ export function EditActiveElement({ networkElementId, setCloseModal, updateActiv
     R_hight,
     R_low,
   });
+
+  if (isOpened) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
 
   function handleFHightChange(e) {
     setElementEditable({
@@ -123,6 +134,7 @@ export function EditActiveElement({ networkElementId, setCloseModal, updateActiv
 }
 
 EditActiveElement.propTypes = {
+  isOpened: PropTypes.bool,
   networkElementId: PropTypes.string,
   setCloseModal: PropTypes.func,
   updateActiveSelected: PropTypes.func,
