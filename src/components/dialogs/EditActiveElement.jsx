@@ -3,11 +3,11 @@ import "./EditActiveElement.css";
 import PropTypes from "prop-types";
 import { PassivesContext } from "../../context/Contexts";
 
-export function EditActiveElement({ id, setCloseModal, updateActiveSelected }) {
+export function EditActiveElement({ networkElementId, setCloseModal, updateActiveSelected }) {
   const networkElements = useContext(PassivesContext);
 
   const { name, F_hight, F_low, R_hight, R_low } = networkElements.find(
-    (element) => element.id === id
+    (element) => element.id === networkElementId
   );
 
   const [active, setElementEditable] = useState({
@@ -47,9 +47,9 @@ export function EditActiveElement({ id, setCloseModal, updateActiveSelected }) {
 
   const saveChanges = () => {
     const contextMutated = networkElements.map((element) => {
-      if (element.id === id) {
+      if (element.id === networkElementId) {
         const { type, image } = element;
-        return { id, name, type, image, ...active };
+        return { id: networkElementId, name, type, image, ...active };
       } else {
         return element;
       }
@@ -123,7 +123,7 @@ export function EditActiveElement({ id, setCloseModal, updateActiveSelected }) {
 }
 
 EditActiveElement.propTypes = {
-  id: PropTypes.string,
+  networkElementId: PropTypes.string,
   setCloseModal: PropTypes.func,
   updateActiveSelected: PropTypes.func,
 };

@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 import { PassivesContext } from "../../context/Contexts";
 
 export function EditPassiveElement({
-  id,
+  networkElementId,
   setCloseModal,
   updatePassiveSelected,
 }) {
   const networkElements = useContext(PassivesContext);
 
-  const elementSelected = networkElements.find((element) => element.id === id);
+  const elementSelected = networkElements.find((element) => element.id === networkElementId);
 
   const [elementEditable, setElementEditable] = useState(elementSelected);
 
@@ -30,7 +30,7 @@ export function EditPassiveElement({
 
   const saveChanges = () => {
     const passiveUpdated = networkElements.map((element) => {
-      if (element.id === id) {
+      if (element.id === networkElementId) {
         return elementEditable;
       } else {
         return element;
@@ -87,7 +87,7 @@ export function EditPassiveElement({
 }
 
 EditPassiveElement.propTypes = {
-  id: PropTypes.string,
+  networkElementId: PropTypes.string,
   setCloseModal: PropTypes.func,
   updatePassiveSelected: PropTypes.func,
 };
