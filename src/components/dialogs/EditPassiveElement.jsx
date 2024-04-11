@@ -4,22 +4,17 @@ import PropTypes from "prop-types";
 import { PassivesContext } from "../../context/Contexts";
 
 export function EditPassiveElement({
-  isOpened,
   networkElementId,
   setCloseModal,
   updatePassiveSelected,
 }) {
   const networkElements = useContext(PassivesContext);
 
-  const elementSelected = networkElements.find((element) => element.id === networkElementId);
+  const elementSelected = networkElements.find(
+    (element) => element.id === networkElementId
+  );
 
   const [elementEditable, setElementEditable] = useState(elementSelected);
-
-  if (isOpened) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
 
   function handleAttenuationChange(e) {
     setElementEditable({
@@ -94,7 +89,6 @@ export function EditPassiveElement({
 }
 
 EditPassiveElement.propTypes = {
-  isOpened: PropTypes.bool,
   networkElementId: PropTypes.string,
   setCloseModal: PropTypes.func,
   updatePassiveSelected: PropTypes.func,

@@ -29,6 +29,12 @@ function App() {
     }
   };
 
+  if (isDialogActiveOpened || isDialogPassiveOpened) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+
   return (
     <>
       <NavBar />
@@ -36,7 +42,6 @@ function App() {
         <PassivesContext.Provider value={networkElements}>
           {isDialogActiveOpened && (
             <EditActiveElement
-              isOpened={isDialogActiveOpened}
               networkElementId={networkElementId} 
               setCloseModal={openCloseActiveDialog}
               updateActiveSelected={setNetworkElement}
@@ -44,7 +49,6 @@ function App() {
           )}
           {isDialogPassiveOpened && (
             <EditPassiveElement
-              isOpened={isDialogPassiveOpened}
               networkElementId={networkElementId}
               setCloseModal={openClosePassiveDialog}
               updatePassiveSelected={setNetworkElement}

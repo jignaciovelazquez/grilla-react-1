@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { PassivesContext } from "../../context/Contexts";
 
 export function EditActiveElement({
-  isOpened,
   networkElementId,
   setCloseModal,
   updateActiveSelected,
@@ -21,12 +20,6 @@ export function EditActiveElement({
     R_hight,
     R_low,
   });
-
-  if (isOpened) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
 
   function handleFHightChange(e) {
     setElementEditable({
@@ -134,7 +127,6 @@ export function EditActiveElement({
 }
 
 EditActiveElement.propTypes = {
-  isOpened: PropTypes.bool,
   networkElementId: PropTypes.string,
   setCloseModal: PropTypes.func,
   updateActiveSelected: PropTypes.func,
