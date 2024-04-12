@@ -10,7 +10,7 @@ export function EditPassiveElement({
 }) {
   const networkElements = useContext(PassivesContext);
 
-  const { name, id, attenuation, insertion } = networkElements.find(
+  const { name, attenuation, insertion } = networkElements.find(
     (element) => element.id === networkElementId
   );
 
