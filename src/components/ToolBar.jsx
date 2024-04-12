@@ -1,20 +1,28 @@
 import styles from "./ToolBar.module.css";
 import Model from "./Model";
 import { useContext } from "react";
+import PropTypes from "prop-types";
 import { PassivesContext } from "../context/Contexts";
 
-function ToolBar() {
-  
+function ToolBar({ setOpenCloseModal }) {
   const networkElements = useContext(PassivesContext);
+
   const modelList = networkElements.map(({ id, type }) => {
-    return <Model key={`key${id}`} id={id} type={type} />;
+    return (
+      <Model
+        key={`key${id}`}
+        id={id}
+        type={type}
+        updateElementNetwork={setOpenCloseModal}
+      />
+    );
   });
 
-  return (
-    <>
-      <div className={styles.bar}>{modelList}</div>
-    </>
-  );
+  return <div className={styles.bar}>{modelList}</div>;
 }
 
 export default ToolBar;
+
+ToolBar.propTypes = {
+  setOpenCloseModal: PropTypes.func,
+};
