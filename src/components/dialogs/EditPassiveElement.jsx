@@ -10,22 +10,22 @@ export function EditPassiveElement({
 }) {
   const networkElements = useContext(PassivesContext);
 
-  const elementSelected = networkElements.find(
+  const { name, id } = networkElements.find(
     (element) => element.id === networkElementId
   );
 
-  const [elementEditable, setElementEditable] = useState(elementSelected);
+  const [passive, setElementEditable] = useState({ id });
 
   function handleAttenuationChange(e) {
     setElementEditable({
-      ...elementEditable,
+      ...passive,
       attenuation: e.target.value,
     });
   }
 
   function handleInsertionChange(e) {
     setElementEditable({
-      ...elementEditable,
+      ...passive,
       insertion: e.target.value,
     });
   }
@@ -33,7 +33,7 @@ export function EditPassiveElement({
   const saveChanges = () => {
     const passiveUpdated = networkElements.map((element) => {
       if (element.id === networkElementId) {
-        return elementEditable;
+        return passive;
       } else {
         return element;
       }
@@ -49,17 +49,16 @@ export function EditPassiveElement({
         onClick={() => {
           setCloseModal(false);
         }}
-        className="overlay"
-      ></div>
+        className="overlay"></div>
       <div className="modal-content">
         <h2>Editar Elemento de Red</h2>
-        <h3>{elementEditable.name}</h3>
+        <h3>{name}</h3>
         <div>
           <label htmlFor="Attenuation">Atenuación:</label>
           <input
             id="Attenuation"
             type="number"
-            value={elementEditable.attenuation}
+            value={passive.attenuation}
             onChange={handleAttenuationChange}
           />
         </div>
@@ -68,7 +67,7 @@ export function EditPassiveElement({
           <input
             id="Insertion"
             type="number"
-            value={elementEditable.insertion}
+            value={passive.insertion}
             onChange={handleInsertionChange}
           />
         </div>
@@ -77,8 +76,7 @@ export function EditPassiveElement({
             id="cancelBtn"
             onClick={() => {
               setCloseModal(false);
-            }}
-          >
+            }}>
             Cancelar
           </button>
           <button onClick={saveChanges}>Guardar</button>
