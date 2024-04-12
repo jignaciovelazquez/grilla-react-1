@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function Cable({ color }) {
   return (
     <svg
@@ -30,3 +32,7 @@ export function Cable({ color }) {
     </svg>
   );
 }
+
+Cable.propTypes = {
+  color: PropTypes.string
+};

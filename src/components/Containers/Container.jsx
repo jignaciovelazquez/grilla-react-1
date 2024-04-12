@@ -1,4 +1,5 @@
 import style from "./Container.module.css";
+import PropTypes from "prop-types";
 
 export function Container({ id, children }) {
   return (
@@ -8,3 +9,8 @@ export function Container({ id, children }) {
     </div>
   );
 }
+
+Container.propTypes = {
+  children: PropTypes.children,
+  id: PropTypes.string,
+};
