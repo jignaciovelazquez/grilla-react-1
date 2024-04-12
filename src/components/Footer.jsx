@@ -10,11 +10,17 @@ function Footer() {
       <hr></hr>
       <p>developed by</p>
       <p>
-        <a href="https://github.com/jignaciovelazquez" target="_blank">
+        <a
+          href="https://github.com/jignaciovelazquez"
+          target="_blank"
+          rel="noopener noreferrer">
           NagcioDev
         </a>{" "}
         &{" "}
-        <a href="https://github.com/YisusW" target="_blank">
+        <a
+          href="https://github.com/YisusW"
+          target="_blank"
+          rel="noopener noreferrer">
           YisusDev
         </a>
       </p>
