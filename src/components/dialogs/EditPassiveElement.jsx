@@ -10,11 +10,11 @@ export function EditPassiveElement({
 }) {
   const networkElements = useContext(PassivesContext);
 
-  const { name, id } = networkElements.find(
+  const { name, id, attenuation, insertion } = networkElements.find(
     (element) => element.id === networkElementId
   );
 
-  const [passive, setElementEditable] = useState({ id });
+  const [passive, setElementEditable] = useState({ attenuation, insertion });
 
   function handleAttenuationChange(e) {
     setElementEditable({
@@ -33,7 +33,7 @@ export function EditPassiveElement({
   const saveChanges = () => {
     const passiveUpdated = networkElements.map((element) => {
       if (element.id === networkElementId) {
-        return passive;
+        return { ...element, ...passive };
       } else {
         return element;
       }
