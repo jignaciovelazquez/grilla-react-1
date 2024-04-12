@@ -52,8 +52,7 @@ export function EditActiveElement({
   const saveChanges = () => {
     const contextMutated = networkElements.map((element) => {
       if (element.id === networkElementId) {
-        const { type, image } = element;
-        return { id: networkElementId, name, type, image, ...active };
+        return { ...element, ...active };
       } else {
         return element;
       }
@@ -69,8 +68,7 @@ export function EditActiveElement({
         onClick={() => {
           setCloseModal(false);
         }}
-        className="overlay"
-      ></div>
+        className="overlay"></div>
       <div className="modal-content">
         <h2>Editar Elemento de Red</h2>
         <h3>{name}</h3>
@@ -115,8 +113,7 @@ export function EditActiveElement({
             id="cancelBtn"
             onClick={() => {
               setCloseModal(false);
-            }}
-          >
+            }}>
             Cancelar
           </button>
           <button onClick={saveChanges}>Guardar</button>
