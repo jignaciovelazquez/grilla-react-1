@@ -1,18 +1,27 @@
 import styles from "./ToolBar.module.css";
 import Model from "./Model";
 import { useContext } from "react";
+import PropTypes from "prop-types";
 import { PassivesContext } from "../context/Contexts";
 import { cables } from "../data/cables";
 import { Cable } from "./Figures/Cable";
 import { ContainerDraggable } from "./Containers/ContainerDraggable";
 
+function ToolBar({ setOpenCloseModal }) {
 
-function ToolBar() {
   const networkElements = useContext(PassivesContext);
-  const modelList = networkElements.map(({ id, type }) => {
-    return <Model key={`key${id}`} id={id} type={type} />;
-  });
 
+  const modelList = networkElements.map(({ id, type }) => {
+    return (
+      <Model
+        key={`key${id}`}
+        id={id}
+        type={type}
+        updateElementNetwork={setOpenCloseModal}
+      />
+    );
+  });
+ 
   const cableList = cables.map(({id, color}, index) => {
     return (
       <ContainerDraggable id={id} key={`key-${index}`}>
@@ -22,13 +31,15 @@ function ToolBar() {
   });
 
   return (
-    <>
-      <div className={styles.bar}>
-        {modelList}
-        {cableList}  
-      </div>
-    </>
+    <div className={styles.bar}>
+      {modelList}
+      {cableList}  
+    </div>
   );
 }
 
 export default ToolBar;
+
+ToolBar.propTypes = {
+  setOpenCloseModal: PropTypes.func,
+};
