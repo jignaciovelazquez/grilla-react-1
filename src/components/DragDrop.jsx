@@ -4,6 +4,7 @@ import Model from "./Model";
 import { useState } from "react";
 import { useDrop } from "react-dnd";
 import styles from "./DragDrop.module.css";
+import { cables } from "../data/cables";
 
 function DragDrop() {
   const networkElements = useContext(PassivesContext);
@@ -19,9 +20,17 @@ function DragDrop() {
 
   const addImageToBoard = (idx) => {
     const pictureDrop = networkElements.filter((picture) => idx === picture.id);
+
+    if (pictureDrop.length === 0) {
+      pictureDrop.push(findCable(idx));
+    }
     setBoard((board) => [...board, pictureDrop[0]]);
     //setBoard([pictureDrop[0]]);
   };
+
+  const findCable = (idx) => {
+    return cables.find((cable)=> cable.id === idx);
+  }
 
   return (
     <>
