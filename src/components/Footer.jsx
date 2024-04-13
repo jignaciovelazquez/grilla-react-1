@@ -4,11 +4,26 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <p>
-        NIVELMETER es una WebApP para el calculo de los niveles de perdidas y
-        ganancias de señal para armado de equipos de tecnologia HFC.
+        NIVELMETER es una WebApp para el calculo de los niveles de perdidas y
+        ganancias de señal para armados de equipos de tecnologia HFC.
       </p>
-      <p>By Ing. Ignacio Velazquez</p>
-      <p>jignaciovelazquez@gmail.com</p>
+      <hr></hr>
+      <p>developed by</p>
+      <p>
+        <a
+          href="https://github.com/jignaciovelazquez"
+          target="_blank"
+          rel="noopener noreferrer">
+          NagcioDev
+        </a>{" "}
+        &{" "}
+        <a
+          href="https://github.com/YisusW"
+          target="_blank"
+          rel="noopener noreferrer">
+          YisusDev
+        </a>
+      </p>
       <p>V0.0.1</p>
     </div>
   );
