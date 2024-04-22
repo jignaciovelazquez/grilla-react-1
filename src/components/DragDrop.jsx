@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useDrop } from "react-dnd";
 import styles from "./DragDrop.module.css";
 import { cables } from "../data/cables";
+import { Cable } from "./Figures/Cable";
+import { ContainerDraggable } from "./Containers/ContainerDraggable";
 
 function DragDrop() {
   const networkElements = useContext(PassivesContext);
@@ -29,15 +31,23 @@ function DragDrop() {
   };
 
   const findCable = (idx) => {
-    return cables.find((cable)=> cable.id === idx);
-  }
+    return cables.find((cable) => cable.id === idx);
+  };
 
   return (
     <>
       <div className={styles.Board} ref={drop}>
         {/*console.log("Arreglo de elementos",board)*/}
-        {board.map(({ id, type }, index) => {
-          return <Model key={`key${index}`} id={id} type={type} />;
+        {board.map(({ id, type, color }, index) => {
+          if (type != "C") {
+            return <Model key={`key${index}`} id={id} type={type} />;
+          } else {
+            return (
+              <ContainerDraggable id={id} key={`key-${index}`}>
+                <Cable color={color} />
+              </ContainerDraggable>
+            );
+          }
         })}
       </div>
     </>
