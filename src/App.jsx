@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import ToolBar from "./components/ToolBar";
 import DragDrop from "./components/DragDrop";
+import ValuesCard from "./components/ValuesCard";
 import "./App.css";
 import { PassivesContext } from "./context/Contexts";
 import { networkElement } from "./data/passives";
@@ -42,7 +43,7 @@ function App() {
         <PassivesContext.Provider value={networkElements}>
           {isDialogActiveOpened && (
             <EditActiveElement
-              networkElementId={networkElementId} 
+              networkElementId={networkElementId}
               setCloseModal={openCloseActiveDialog}
               updateActiveSelected={setNetworkElement}
             />

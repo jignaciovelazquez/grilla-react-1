@@ -1,12 +1,25 @@
 .Board {
-    border: 2px solid black;
-    background-color: #ffffff;
-    height: 120px;
-    width: 80%;
-    align-items: center;
-    display: flex;
-    padding: 5px;
-    gap: 5px;
-    margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 120px;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  padding: 5px;
+  gap: 5px;
+  margin: auto;
 }
 
+.ValuesCard {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 150px;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  padding: 5px;
+  gap: 5px;
+  margin: auto;
+}

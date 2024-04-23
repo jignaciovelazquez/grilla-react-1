@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDrop } from "react-dnd";
 import styles from "./DragDrop.module.css";
 import { cables } from "../data/cables";
+import ValuesCard from "./ValuesCard";
 
 function DragDrop() {
   const networkElements = useContext(PassivesContext);
@@ -29,8 +30,8 @@ function DragDrop() {
   };
 
   const findCable = (idx) => {
-    return cables.find((cable)=> cable.id === idx);
-  }
+    return cables.find((cable) => cable.id === idx);
+  };
 
   return (
     <>
@@ -38,6 +39,11 @@ function DragDrop() {
         {/*console.log("Arreglo de elementos",board)*/}
         {board.map(({ id, type }, index) => {
           return <Model key={`key${index}`} id={id} type={type} />;
+        })}
+      </div>
+      <div className={styles.ValuesCard}>
+        {board.map(({ id, type }, index) => {
+          return <ValuesCard key={`key2${index}`} />;
         })}
       </div>
     </>
