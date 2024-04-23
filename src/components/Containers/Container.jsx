@@ -11,6 +11,6 @@ export function Container({ id, children }) {
 }
 
 Container.propTypes = {
-  children: PropTypes.children,
+  children: PropTypes.element,
   id: PropTypes.string,
 };

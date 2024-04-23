@@ -20,6 +20,6 @@ export function ContainerDraggable({ id, children }) {
 }
 
 ContainerDraggable.propTypes = {
-  children: PropTypes.children,
+  children: PropTypes.element,
   id: PropTypes.string,
 };
