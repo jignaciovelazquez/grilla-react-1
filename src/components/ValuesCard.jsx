@@ -5,9 +5,8 @@ function ValuesCard() {
     <div className={styles.card}>
       <div className={styles.container}>
         <div>
-          <label>
-            <input></input>m
-          </label>
+          <input type="text" value={20} />
+          <label>m</label>
           <select>
             <option value="value1" selected>
               X2
