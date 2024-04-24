@@ -2,7 +2,7 @@ import style from "./Model.module.css";
 import PropTypes from "prop-types";
 import { useDrag } from "react-dnd";
 
-function Model({ id, type, updateElementNetwork }) {
+function Model({ id, type, updateElementNetwork, dragElement }) {
   const [, drag] = useDrag(() => ({
     type: "image",
     item: { id: id },
@@ -29,12 +29,31 @@ function Model({ id, type, updateElementNetwork }) {
     }
   };
 
-  return (
-    <div className={style.container} ref={drag} onClick={openDialog}>
-      <div className={getFigureClassName(type)}></div>
-      <span>{id}</span>
-    </div>
-  );
+  if (dragElement != 1) {
+    return (
+      <>
+        <div className={style.container} ref={drag} onClick={openDialog}>
+          <div className={getFigureClassName(type)}></div>
+          <span>{id}</span>
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div className={style.container} onClick={openDialog}>
+          <button
+            onClick={() => {
+              alert("Realmente desea eliminar el elemento");
+            }}>
+            -
+          </button>
+          <div className={getFigureClassName(type)}></div>
+          <span>{id}</span>
+        </div>
+      </>
+    );
+  }
 }
 
 Model.propTypes = {
