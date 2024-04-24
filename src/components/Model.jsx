@@ -60,6 +60,7 @@ Model.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
   updateElementNetwork: PropTypes.func,
+  dragElement: PropTypes.string,
 };
 
 export default Model;
