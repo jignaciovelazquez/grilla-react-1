@@ -66,11 +66,6 @@ function DragDrop({ handleSequence }) {
       {
         setParam() /************************************************************* */
       }
-      <div className={styles.ValuesCard}>
-        {board.map(({ id, type }, index) => {
-          return <ValuesCard key={`key2${index}`} />;
-        })}
-      </div>
     </>
   );
 }

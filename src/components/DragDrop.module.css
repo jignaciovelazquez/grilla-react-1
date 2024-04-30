@@ -2,7 +2,7 @@
   border: 2px solid black;
   border-radius: 10px;
   background-color: #ffffff;
-  height: 120px;
+  height: 100px;
   width: 80%;
   align-items: center;
   display: flex;
@@ -11,7 +11,7 @@
   margin: auto;
 }
 
-.ValuesCard {
+.ValuesCardOld {
   border: 2px solid black;
   border-radius: 10px;
   background-color: #ffffff;
