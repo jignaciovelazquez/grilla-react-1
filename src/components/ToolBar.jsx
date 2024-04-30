@@ -8,7 +8,6 @@ import { Cable } from "./Figures/Cable";
 import { ContainerDraggable } from "./Containers/ContainerDraggable";
 
 function ToolBar({ setOpenCloseModal }) {
-
   const networkElements = useContext(PassivesContext);
 
   const modelList = networkElements.map(({ id, type }) => {
@@ -21,11 +20,11 @@ function ToolBar({ setOpenCloseModal }) {
       />
     );
   });
- 
-  const cableList = cables.map(({id, color}, index) => {
+
+  const cableList = cables.map(({ id, color }, index) => {
     return (
       <ContainerDraggable id={id} key={`key-${index}`}>
-        <Cable color={color} />
+        <Cable color={color} enable={0} />
       </ContainerDraggable>
     );
   });
@@ -33,7 +32,7 @@ function ToolBar({ setOpenCloseModal }) {
   return (
     <div className={styles.bar}>
       {modelList}
-      {cableList}  
+      {cableList}
     </div>
   );
 }

@@ -55,15 +55,10 @@ function DragDrop() {
           } else {
             return (
               <Container id={id} key={`key-${index}`}>
-                <Cable color={color} />
+                <Cable color={color} enable={1} />
               </Container>
             );
           }
-        })}
-      </div>
-      <div className={styles.ValuesCard}>
-        {board.map(({ id, type }, index) => {
-          return <ValuesCard key={`key2${index}`} />;
         })}
       </div>
       <div className={styles.ValuesCard}>
