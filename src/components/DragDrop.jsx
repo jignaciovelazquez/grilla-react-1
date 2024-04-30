@@ -9,7 +9,7 @@ import { Cable } from "./Figures/Cable";
 import { Container } from "./Containers/Container";
 import ValuesCard from "./ValuesCard";
 
-function DragDrop() {
+function DragDrop({ handleSequence }) {
   const networkElements = useContext(PassivesContext);
   const [board, setBoard] = useState([]);
 
@@ -35,13 +35,15 @@ function DragDrop() {
     return cables.find((cable) => cable.id === idx);
   };
 
+  const setParam = () => {
+    handleSequence(board);
+  };
+
   let dragElement = 1;
 
   return (
     <>
       <div className={styles.Board} ref={drop}>
-        {/*console.log("Arreglo de elementos",board)*/}
-
         {board.map(({ id, type, color }, index) => {
           if (type != "C") {
             return (
@@ -61,6 +63,9 @@ function DragDrop() {
           }
         })}
       </div>
+      {
+        setParam() /************************************************************* */
+      }
       <div className={styles.ValuesCard}>
         {board.map(({ id, type }, index) => {
           return <ValuesCard key={`key2${index}`} />;

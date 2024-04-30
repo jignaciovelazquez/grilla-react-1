@@ -1,6 +1,6 @@
 import styles from "./ValuesCard.module.css";
 
-function ValuesCard() {
+function ValuesCard(sequence) {
   return (
     <div className={styles.card}>
       <div className={styles.container}>

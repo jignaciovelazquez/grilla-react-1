@@ -21,6 +21,8 @@ function App() {
   // id model selected
   const [networkElementId, setElementId] = useState("");
 
+  const [sequence, setSequence] = useState([]);
+
   const openDialog = (id, typeElement) => {
     setElementId(id);
     if (typeElement === "tap" || typeElement === "pasivo") {
@@ -35,6 +37,10 @@ function App() {
   } else {
     document.body.classList.remove("active-modal");
   }
+
+  const handleSequence = (train) => {
+    setSequence(train);
+  };
 
   return (
     <>
@@ -58,7 +64,8 @@ function App() {
           <ToolBar setOpenCloseModal={openDialog} />
           <section>
             <h1>Arrastre los elementos del Armado</h1>
-            <DragDrop />
+            <DragDrop handleSequence={handleSequence} />
+            <ValuesCard sequence={sequence} />
           </section>
         </PassivesContext.Provider>
       </DndProvider>
