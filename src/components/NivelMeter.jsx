@@ -42,7 +42,6 @@ export function NivelMeter() {
         <EditPassiveElement
           networkElementId={networkElementId}
           setCloseModal={openClosePassiveDialog}
-          updatePassiveSelected={setNetworkElement}
         />
       )}
       <ToolBar setOpenCloseModal={openDialog} />
