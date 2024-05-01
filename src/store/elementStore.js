@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import { cables as dataCable } from "../data/cables";
 import { networkElement as dataPassives } from "../data/passives";
 
-const passives = dataPassives.filter((element) => element.type === 'pasivo');
+const passives = dataPassives.filter((element) => element.type === 'pasivo' || element.type === 'tap');
 const actives = dataPassives.filter((element) => element.type === 'activo');
 
 export const useElementStore = create((set) => ({
