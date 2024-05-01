@@ -4,5 +4,6 @@ export const cables = [
     name: "Cable EJ",
     color: "#FF33F0",
     type: "C",
-  }
+    attenuation: -0.2,
+  },
 ];
