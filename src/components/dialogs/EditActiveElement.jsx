@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./EditActiveElement.css";
 import PropTypes from "prop-types";
-import { PassivesContext } from "../../context/Contexts";
+import { useElementStore } from "../../store/elementStore";
 
 export function EditActiveElement({
   networkElementId,
-  setCloseModal,
-  updateActiveSelected,
+  setCloseModal
 }) {
-  const networkElements = useContext(PassivesContext);
+  const activesState = useElementStore((state) => state.actives);
+  const updateActiveState = useElementStore((state) => state.updateActives);
 
-  const { name, F_hight, F_low, R_hight, R_low } = networkElements.find(
+  const { name, F_hight, F_low, R_hight, R_low } = activesState.find(
     (element) => element.id === networkElementId
   );
 
@@ -50,7 +50,7 @@ export function EditActiveElement({
   }
 
   const saveChanges = () => {
-    const contextMutated = networkElements.map((element) => {
+    const contextMutated = activesState.map((element) => {
       if (element.id === networkElementId) {
         return { ...element, ...active };
       } else {
@@ -58,7 +58,7 @@ export function EditActiveElement({
       }
     });
 
-    updateActiveSelected(contextMutated);
+    updateActiveState(contextMutated);
     setCloseModal(false);
   };
 
@@ -125,6 +125,5 @@ export function EditActiveElement({
 
 EditActiveElement.propTypes = {
   networkElementId: PropTypes.string,
-  setCloseModal: PropTypes.func,
-  updateActiveSelected: PropTypes.func,
+  setCloseModal: PropTypes.func
 };

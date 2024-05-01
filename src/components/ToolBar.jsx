@@ -1,17 +1,17 @@
 import styles from "./ToolBar.module.css";
 import Model from "./Model";
-import { useContext } from "react";
 import PropTypes from "prop-types";
-import { PassivesContext } from "../context/Contexts";
-import { cables } from "../data/cables";
 import { Cable } from "./Figures/Cable";
 import { ContainerDraggable } from "./Containers/ContainerDraggable";
+import { useElementStore } from "../store/elementStore";
 
 function ToolBar({ setOpenCloseModal }) {
 
-  const networkElements = useContext(PassivesContext);
+  const activesState = useElementStore((state) => state.actives);
+  const passivesState = useElementStore((state) => state.passives);
+  const cablesState = useElementStore((state) => state.cables);
 
-  const modelList = networkElements.map(({ id, type }) => {
+  const modelList = [...activesState, ...passivesState].map(({ id, type }) => {
     return (
       <Model
         key={`key${id}`}
@@ -22,7 +22,7 @@ function ToolBar({ setOpenCloseModal }) {
     );
   });
  
-  const cableList = cables.map(({id, color}, index) => {
+  const cableList = cablesState.map(({id, color}, index) => {
     return (
       <ContainerDraggable id={id} key={`key-${index}`}>
         <Cable color={color} />

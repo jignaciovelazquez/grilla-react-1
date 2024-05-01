@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./EditPassiveElement.css";
 import PropTypes from "prop-types";
-import { PassivesContext } from "../../context/Contexts";
+import { useElementStore } from "../../store/elementStore";
 
 export function EditPassiveElement({
   networkElementId,
-  setCloseModal,
-  updatePassiveSelected,
+  setCloseModal
 }) {
-  const networkElements = useContext(PassivesContext);
+  const passivesState = useElementStore((state) => state.passives);
+  const updatePassivesState = useElementStore((state) => state.updatePassives);
 
-  const { name, attenuation, insertion } = networkElements.find(
+  const { name, attenuation, insertion } = passivesState.find(
     (element) => element.id === networkElementId
   );
 
@@ -31,7 +31,7 @@ export function EditPassiveElement({
   }
 
   const saveChanges = () => {
-    const passiveUpdated = networkElements.map((element) => {
+    const passiveUpdated = passivesState.map((element) => {
       if (element.id === networkElementId) {
         return { ...element, ...passive };
       } else {
@@ -39,7 +39,7 @@ export function EditPassiveElement({
       }
     });
 
-    updatePassiveSelected(passiveUpdated);
+    updatePassivesState(passiveUpdated);
     setCloseModal(false);
   };
 
@@ -88,6 +88,5 @@ export function EditPassiveElement({
 
 EditPassiveElement.propTypes = {
   networkElementId: PropTypes.string,
-  setCloseModal: PropTypes.func,
-  updatePassiveSelected: PropTypes.func,
+  setCloseModal: PropTypes.func
 };
