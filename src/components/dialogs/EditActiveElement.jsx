@@ -125,6 +125,5 @@ export function EditActiveElement({
 
 EditActiveElement.propTypes = {
   networkElementId: PropTypes.string,
-  setCloseModal: PropTypes.func,
-  updateActiveSelected: PropTypes.func,
+  setCloseModal: PropTypes.func
 };
