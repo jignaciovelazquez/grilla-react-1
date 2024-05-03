@@ -1,7 +1,7 @@
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import Footer from "./components/UI/Footer";
+import NavBar from "./components/UI/NavBar";
 import ToolBar from "./components/ToolBar";
 import DragDrop from "./components/DragDrop";
 import "./App.css";
