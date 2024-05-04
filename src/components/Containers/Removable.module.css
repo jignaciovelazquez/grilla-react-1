@@ -1,0 +1,90 @@
+.container {
+  background-color: #033f8d;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: space-evenly;
+}
+
+.element {
+  background: rgba(49,49,49,0.8);
+  opacity: 40;
+}
+
+.container, .element {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 20%;
+}
+
+/* --------------------------------------------------------- EXMAPLE */
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu div {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.menu div div {
+  transition: transform 0.2s ease-out;
+}
+
+.menu div div:first-child {
+  display: inline-block;
+  padding: 10px;
+}
+
+.menu div div:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+}
+
+.menu div:hover div:first-child {
+  transform: translateY(100%);
+}
+
+.menu div:hover div:last-child,
+.menu[data-animation] div:hover div:last-child {
+  transform: none;
+}
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.menu[data-animation="to-top"] div div:last-child {
+  transform: translateY(100%);
+}
+
+.menu[data-animation="to-top"] div:hover div:first-child {
+  transform: translateY(-100%);
+}
+
+.menu[data-animation="to-right"] div div:last-child {
+  transform: translateX(-100%);
+}
+
+.menu[data-animation="to-right"] div:hover div:first-child {
+  transform: translateX(100%);
+}
+
+.menu[data-animation="to-left"] div div:last-child {
+  transform: translateX(100%);
+}
+
+.menu[data-animation="to-left"] div:hover div:first-child {
+  transform: translateX(-100%);
+}

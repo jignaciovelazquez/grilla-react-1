@@ -6,7 +6,7 @@ import { useDrop } from "react-dnd";
 import styles from "./DragDrop.module.css";
 import { cables } from "../data/cables";
 import { Cable } from "./Figures/Cable";
-import { Container } from "./Containers/Container";
+import { Removable } from "./Containers/Removable";
 
 function DragDrop() {
   const networkElements = useContext(PassivesContext);
@@ -53,9 +53,9 @@ function DragDrop() {
             );
           } else {
             return (
-              <Container id={id} key={`key-${index}`}>
+              <Removable id={id} key={`key-${index}`}>
                 <Cable color={color} />
-              </Container>
+              </Removable>
             );
           }
         })}

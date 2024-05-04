@@ -31,27 +31,17 @@ function Model({ id, type, updateElementNetwork, dragElement }) {
 
   if (dragElement != 1) {
     return (
-      <>
-        <div className={style.container} ref={drag} onClick={openDialog}>
-          <div className={getFigureClassName(type)}></div>
-          <span>{id}</span>
-        </div>
-      </>
+      <div className={style.container} ref={drag} onClick={openDialog}>
+        <div className={getFigureClassName(type)}></div>
+        <span>{id}</span>
+      </div>
     );
   } else {
     return (
-      <>
-        <div className={style.container} onClick={openDialog}>
-          <button
-            onClick={() => {
-              alert("Realmente desea eliminar el elemento");
-            }}>
-            -
-          </button>
-          <div className={getFigureClassName(type)}></div>
-          <span>{id}</span>
-        </div>
-      </>
+      <div className={style.container} onClick={openDialog}>
+        <div className={getFigureClassName(type)}></div>
+        <span>{id}</span>
+      </div>
     );
   }
 }
@@ -60,7 +50,7 @@ Model.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
   updateElementNetwork: PropTypes.func,
-  dragElement: PropTypes.string,
+  dragElement: PropTypes.number,
 };
 
 export default Model;
