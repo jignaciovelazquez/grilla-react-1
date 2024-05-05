@@ -14,13 +14,13 @@ function DragDrop() {
 
   const [, drop] = useDrop(() => ({
     accept: "image",
-    drop: (item) => addImageToBoard(item.id),
+    drop: (item) => addElement(item.id),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
   }));
 
-  const addImageToBoard = (idx) => {
+  const addElement = (idx) => {
     const pictureDrop = networkElements.filter((picture) => idx === picture.id);
 
     if (pictureDrop.length === 0) {
@@ -29,6 +29,13 @@ function DragDrop() {
     setBoard((board) => [...board, pictureDrop[0]]);
     //setBoard([pictureDrop[0]]);
   };
+  
+  const removeElement = (idClicked) => {
+
+    const newBoard = board.filter((element) => element.id !== idClicked);
+
+    setBoard(newBoard);
+  }
 
   const findCable = (idx) => {
     return cables.find((cable) => cable.id === idx);
@@ -37,30 +44,28 @@ function DragDrop() {
   let dragElement = 1;
 
   return (
-    <>
-      <div className={styles.Board} ref={drop}>
-        {/*console.log("Arreglo de elementos",board)*/}
+    <div className={styles.Board} ref={drop}>
+      {/*console.log("Arreglo de elementos",board)*/}
 
-        {board.map(({ id, type, color }, index) => {
-          if (type != "C") {
-            return (
-              <Model
-                key={`key${index}`}
-                id={id}
-                type={type}
-                dragElement={dragElement}
-              />
-            );
-          } else {
-            return (
-              <Removable id={id} key={`key-${index}`}>
-                <Cable color={color} />
-              </Removable>
-            );
-          }
-        })}
-      </div>
-    </>
+      {board.map(({ id, type, color }, index) => {
+        if (type != "C") {
+          return (
+            <Model
+              key={`key${index}`}
+              id={id}
+              type={type}
+              dragElement={dragElement}
+            />
+          );
+        } else {
+          return (
+            <Removable id={id} key={`key-${index}`} removeElement={removeElement}>
+              <Cable color={color} />
+            </Removable>
+          );
+        }
+      })}
+    </div>
   );
 }
 
