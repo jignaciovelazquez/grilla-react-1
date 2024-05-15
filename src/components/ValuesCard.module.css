@@ -37,3 +37,19 @@
   gap: 5px;
   margin: auto;
 }
+
+.distance {
+  display: flex;
+}
+
+.distance input {
+  width: 20px;
+  text-align: center;
+  display: flex;
+}
+
+.distance label {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}

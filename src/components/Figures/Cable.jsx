@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./Cable.module.css";
 
-export function Cable({ color, enable }) {
+export function Cable({ color }) {
   return (
     <>
       <svg
@@ -31,12 +31,6 @@ export function Cable({ color, enable }) {
           />
         </g>
       </svg>
-      <div hidden={enable != 1 ? true : false}>
-        <div id="m" className={styles.distance}>
-          <input type="text" />
-          <label>m</label>
-        </div>
-      </div>
     </>
   );
 }

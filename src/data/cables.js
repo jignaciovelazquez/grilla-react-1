@@ -1,9 +1,10 @@
 export const cables = [
   {
-    id: "RDD1",
-    name: "Cable EJ",
+    id: "RG11",
+    name: "RG11",
     color: "#FF33F0",
     type: "C",
     attenuation: -0.2,
+    meters: 1,
   },
 ];

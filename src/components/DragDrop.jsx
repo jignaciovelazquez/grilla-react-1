@@ -57,7 +57,7 @@ function DragDrop({ handleSequence }) {
           } else {
             return (
               <Container id={id} key={`key-${index}`}>
-                <Cable color={color} enable={1} />
+                <Cable color={color} />
               </Container>
             );
           }
