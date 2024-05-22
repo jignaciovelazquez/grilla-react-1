@@ -6,8 +6,7 @@ import { useDrop } from "react-dnd";
 import styles from "./DragDrop.module.css";
 import { cables } from "../data/cables";
 import { Cable } from "./Figures/Cable";
-import { Container } from "./Containers/Container";
-import ValuesCard from "./ValuesCard";
+import { Removable } from "./Containers/Removable";
 
 function DragDrop({ handleSequence }) {
   const networkElements = useContext(PassivesContext);
@@ -15,13 +14,13 @@ function DragDrop({ handleSequence }) {
 
   const [, drop] = useDrop(() => ({
     accept: "image",
-    drop: (item) => addImageToBoard(item.id),
+    drop: (item) => addElement(item.id),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
   }));
 
-  const addImageToBoard = (idx) => {
+  const addElement = (idx) => {
     const pictureDrop = networkElements.filter((picture) => idx === picture.id);
 
     if (pictureDrop.length === 0) {
@@ -29,6 +28,12 @@ function DragDrop({ handleSequence }) {
     }
     setBoard((board) => [...board, pictureDrop[0]]);
     //setBoard([pictureDrop[0]]);
+  };
+
+  const removeElement = (idClicked) => {
+    const newBoard = board.filter((element) => element.id !== idClicked);
+
+    setBoard(newBoard);
   };
 
   const findCable = (idx) => {
@@ -44,6 +49,8 @@ function DragDrop({ handleSequence }) {
   return (
     <>
       <div className={styles.Board} ref={drop}>
+        {/*console.log("Arreglo de elementos",board)*/}
+
         {board.map(({ id, type, color }, index) => {
           if (type != "C") {
             return (
@@ -56,9 +63,12 @@ function DragDrop({ handleSequence }) {
             );
           } else {
             return (
-              <Container id={id} key={`key-${index}`}>
+              <Removable
+                id={id}
+                key={`key-${index}`}
+                removeElement={removeElement}>
                 <Cable color={color} />
-              </Container>
+              </Removable>
             );
           }
         })}

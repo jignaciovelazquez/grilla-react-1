@@ -38,7 +38,7 @@ function Model({ id, type, updateElementNetwork, dragElement }) {
     );
   } else {
     return (
-      <div className={style.container}>
+      <div className={style.container} onClick={openDialog}>
         <div className={getFigureClassName(type)}></div>
         <span>{id}</span>
       </div>
