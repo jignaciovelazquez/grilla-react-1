@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { PassivesContext } from "../context/Contexts";
 import styles from "./ValuesCard.module.css";
 import Table from "./Table";
+import PropTypes from "prop-types";
 
 function ValuesCard({ sequence }) {
   const networkElements = useContext(PassivesContext);
@@ -71,5 +72,9 @@ function ValuesCard({ sequence }) {
     </div>
   );
 }
+
+ValuesCard.propTypes = {
+  sequence: PropTypes.array,
+};
 
 export default ValuesCard;

@@ -1,5 +1,5 @@
-import React from "react";
 import styles from "./Table.module.css";
+import PropTypes from "prop-types";
 
 function Table({ name, H = 0, L = 0, RH = 0, RL = 0 }) {
   return (
@@ -26,5 +26,13 @@ function Table({ name, H = 0, L = 0, RH = 0, RL = 0 }) {
     </div>
   );
 }
+
+Table.propTypes = {
+  name: PropTypes.string,
+  H: PropTypes.number,
+  L: PropTypes.number,
+  RH: PropTypes.number,
+  RL: PropTypes.number,
+};
 
 export default Table;

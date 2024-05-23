@@ -7,6 +7,7 @@ import styles from "./DragDrop.module.css";
 import { cables } from "../data/cables";
 import { Cable } from "./Figures/Cable";
 import { Removable } from "./Containers/Removable";
+import PropTypes from "prop-types";
 
 function DragDrop({ handleSequence }) {
   const networkElements = useContext(PassivesContext);
@@ -79,5 +80,9 @@ function DragDrop({ handleSequence }) {
     </>
   );
 }
+
+DragDrop.propTypes = {
+  handleSequence: PropTypes.func,
+};
 
 export default DragDrop;

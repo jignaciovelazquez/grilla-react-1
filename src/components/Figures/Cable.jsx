@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import styles from "./Cable.module.css";
 
 export function Cable({ color }) {
   return (
