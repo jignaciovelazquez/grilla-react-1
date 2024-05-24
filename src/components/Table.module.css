@@ -1,0 +1,15 @@
+/* Add some padding inside the card container */
+.container {
+  margin: auto;
+  padding: 1px;
+  color: white;
+  justify-content: space-between;
+}
+
+.container input {
+  width: 20px;
+}
+
+.container div label {
+  text-align: left;
+}

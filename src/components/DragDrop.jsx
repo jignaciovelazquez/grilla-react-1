@@ -7,8 +7,9 @@ import styles from "./DragDrop.module.css";
 import { cables } from "../data/cables";
 import { Cable } from "./Figures/Cable";
 import { Removable } from "./Containers/Removable";
+import PropTypes from "prop-types";
 
-function DragDrop() {
+function DragDrop({ handleSequence }) {
   const networkElements = useContext(PassivesContext);
   const [board, setBoard] = useState([]);
 
@@ -29,44 +30,59 @@ function DragDrop() {
     setBoard((board) => [...board, pictureDrop[0]]);
     //setBoard([pictureDrop[0]]);
   };
-  
-  const removeElement = (idClicked) => {
 
+  const removeElement = (idClicked) => {
     const newBoard = board.filter((element) => element.id !== idClicked);
 
     setBoard(newBoard);
-  }
+  };
 
   const findCable = (idx) => {
     return cables.find((cable) => cable.id === idx);
   };
 
+  const setParam = () => {
+    handleSequence(board);
+  };
+
   let dragElement = 1;
 
   return (
-    <div className={styles.Board} ref={drop}>
-      {/*console.log("Arreglo de elementos",board)*/}
+    <>
+      <div className={styles.Board} ref={drop}>
+        {/*console.log("Arreglo de elementos",board)*/}
 
-      {board.map(({ id, type, color }, index) => {
-        if (type != "C") {
-          return (
-            <Model
-              key={`key${index}`}
-              id={id}
-              type={type}
-              dragElement={dragElement}
-            />
-          );
-        } else {
-          return (
-            <Removable id={id} key={`key-${index}`} removeElement={removeElement}>
-              <Cable color={color} />
-            </Removable>
-          );
-        }
-      })}
-    </div>
+        {board.map(({ id, type, color }, index) => {
+          if (type != "C") {
+            return (
+              <Model
+                key={`key${index}`}
+                id={id}
+                type={type}
+                dragElement={dragElement}
+              />
+            );
+          } else {
+            return (
+              <Removable
+                id={id}
+                key={`key-${index}`}
+                removeElement={removeElement}>
+                <Cable color={color} />
+              </Removable>
+            );
+          }
+        })}
+      </div>
+      {
+        setParam() /************************************************************* */
+      }
+    </>
   );
 }
+
+DragDrop.propTypes = {
+  handleSequence: PropTypes.func,
+};
 
 export default DragDrop;
