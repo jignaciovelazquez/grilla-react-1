@@ -19,14 +19,14 @@ export function EditPassiveElement({
   function handleAttenuationChange(e) {
     setElementEditable({
       ...passive,
-      attenuation: e.target.value,
+      attenuation: parseInt(e.target.value, 10),
     });
   }
 
   function handleInsertionChange(e) {
     setElementEditable({
       ...passive,
-      insertion: e.target.value,
+      insertion: parseInt(e.target.value, 10),
     });
   }
 

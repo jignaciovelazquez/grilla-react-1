@@ -24,28 +24,28 @@ export function EditActiveElement({
   function handleFHightChange(e) {
     setElementEditable({
       ...active,
-      F_hight: e.target.value,
+      F_hight: parseInt(e.target.value, 10),
     });
   }
 
   function handleFLowChange(e) {
     setElementEditable({
       ...active,
-      F_low: e.target.value,
+      F_low: parseInt(e.target.value, 10),
     });
   }
 
   function handleRHightChange(e) {
     setElementEditable({
       ...active,
-      R_hight: e.target.value,
+      R_hight: parseInt(e.target.value, 10),
     });
   }
 
   function handleRLowChange(e) {
     setElementEditable({
       ...active,
-      R_low: e.target.value,
+      R_low: parseInt(e.target.value, 10),
     });
   }
 
