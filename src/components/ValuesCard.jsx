@@ -9,6 +9,7 @@ const DEFAULT_CABLE_VALUE = cables[0];
 
 function ValuesCard({ sequence }) {
   const [cableMeters, updateCable] = useState(DEFAULT_CABLE_VALUE.meters);
+  let cableIndex = null;
 
   const networkElements = useContext(PassivesContext);
   let H = 0;
@@ -30,10 +31,14 @@ function ValuesCard({ sequence }) {
             RH = updateElement[0].R_hight;
             RL = updateElement[0].R_low;
           } else {
-            H = H - updateElement[0].attenuation;
+            H = H - updateElement[0].attenuation ;
             L = L - updateElement[0].attenuation;
             RH = RH + updateElement[0].insertion;
             RL = RL + updateElement[0].insertion;
+          }
+          if (cableIndex && index > cableIndex) {
+            H = H - (cableMeters * DEFAULT_CABLE_VALUE.attenuation)
+            L = L - (cableMeters * DEFAULT_CABLE_VALUE.attenuation)
           }
           return (
             <div className={styles.card} key={`key${index + 33}`}>
@@ -61,6 +66,7 @@ function ValuesCard({ sequence }) {
             </div>
           );
         } else {
+          cableIndex = index;
           return (
             <div className={styles.card} key={`key-${index}-cable`}>
               <div className={styles.container}>
