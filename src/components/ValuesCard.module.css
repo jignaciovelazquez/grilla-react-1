@@ -43,9 +43,9 @@
 }
 
 .distance input {
-  width: 20px;
   text-align: center;
   display: flex;
+  width: 3rem;
 }
 
 .distance label {

@@ -1,10 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PassivesContext } from "../context/Contexts";
 import styles from "./ValuesCard.module.css";
 import Table from "./Table";
 import PropTypes from "prop-types";
+import { cables } from "../data/cables";
+
+const DEFAULT_CABLE_VALUE = cables[0];
 
 function ValuesCard({ sequence }) {
+  const [cableMeters, updateCable] = useState(DEFAULT_CABLE_VALUE.meters);
+
   const networkElements = useContext(PassivesContext);
   let H = 0;
   let L = 0;
@@ -57,12 +62,17 @@ function ValuesCard({ sequence }) {
           );
         } else {
           return (
-            <div className={styles.card} key={`key${index + 55}`}>
+            <div className={styles.card} key={`key-${index}-cable`}>
               <div className={styles.container}>
                 <label>{name}</label>
                 <div id="m" className={styles.distance}>
-                  <input type="text" />
-                  <label>m</label>
+                  <input
+                    name="operational-cable"
+                    type="number"
+                    placeholder="Metros"
+                    value={cableMeters}
+                    onChange={e => updateCable(e.target.value)}
+                  />
                 </div>
               </div>
             </div>
