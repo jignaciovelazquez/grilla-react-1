@@ -10,10 +10,6 @@
   width: 3rem;
 }
 
-.container div {
- display: flex;
-}
-
 .container div label {
   text-align: left;
 }
