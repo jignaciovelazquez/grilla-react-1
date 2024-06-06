@@ -2,20 +2,22 @@ import { container, element } from "./Removable.module.css";
 import PropTypes from "prop-types";
 import { IconTrash } from "../UI/IconTrash";
 
-export function Removable({ id, children, removeElement }) {
-
+export function Removable({ id, index, children, removeElement }) {
   const deleteItem = () => {
-    const confirmation = confirm("¿Estas seguro que quieres elimiar el elemento?");
+    const confirmation = confirm(
+      "¿Estas seguro que quieres elimiar el elemento?"
+    );
     if (confirmation) {
-      removeElement(id);
+      console.log("posicion", index);
+      removeElement(index);
     }
-  }
+  };
 
   return (
     <div className={container} onClick={deleteItem}>
       <div className={element}>
         {children}
-        <span>{id}</span>
+        <span>{id}</span> {/* donde se dibuja este spam? */}
       </div>
       <div className={element}>
         <IconTrash />
@@ -27,5 +29,6 @@ export function Removable({ id, children, removeElement }) {
 Removable.propTypes = {
   children: PropTypes.element,
   id: PropTypes.string,
-  removeElement: PropTypes.func
+  index: PropTypes.number,
+  removeElement: PropTypes.func,
 };
