@@ -31,8 +31,8 @@ function DragDrop({ handleSequence }) {
     //setBoard([pictureDrop[0]]);
   };
 
-  const removeElement = (idClicked) => {
-    const newBoard = board.filter((element) => element.id !== idClicked);
+  const removeElement = (indexClicked) => {
+    const newBoard = board.filter((element, index) => index !== indexClicked); //se puede usar el segundo argumento sin tener que definir una variable para el primero?
 
     setBoard(newBoard);
   };
@@ -55,18 +55,25 @@ function DragDrop({ handleSequence }) {
         {board.map(({ id, type, color }, index) => {
           if (type != "C") {
             return (
-              <Model
-                key={`key${index}`}
+              <Removable
+                key={`key-${index}`}
                 id={id}
-                type={type}
-                dragElement={dragElement}
-              />
+                index={index}
+                removeElement={removeElement}>
+                <Model
+                  key={`key${index}`}
+                  id={id}
+                  type={type}
+                  dragElement={dragElement}
+                />
+              </Removable>
             );
           } else {
             return (
               <Removable
-                id={id}
                 key={`key-${index}`}
+                id={id}
+                index={index}
                 removeElement={removeElement}>
                 <Cable color={color} />
               </Removable>
