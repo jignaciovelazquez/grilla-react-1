@@ -100,6 +100,7 @@ function Table({ name, type, H = 0, L = 0, RH = 0, RL = 0 }) {
 
 Table.propTypes = {
   name: PropTypes.string,
+  type: PropTypes.string,
   H: PropTypes.number,
   L: PropTypes.number,
   RH: PropTypes.number,
