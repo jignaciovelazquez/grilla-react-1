@@ -46,14 +46,3 @@ span {
   font-weight: normal;
   font-size: 14px;
 }
-
-button {
-  background-color: #f00;
-  border: black;
-  border-radius: 25%;
-  width: 20px;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  margin: auto;
-}
