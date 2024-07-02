@@ -15,7 +15,6 @@ function Table({ name, type, H = 0, L = 0, RH = 0, RL = 0 }) {
     setSubscriberCable(e.target.value);
   }
 
-  console.log(subscriberCable);
   if (type != "activo") {
     return (
       <div className={styles.container}>
