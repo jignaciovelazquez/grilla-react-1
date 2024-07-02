@@ -8,6 +8,7 @@
 
 .container input {
   width: 3rem;
+  text-align: center;
 }
 
 .container div label {
