@@ -23,12 +23,15 @@ function Table({ name, type, H = 0, L = 0, RH = 0, RL = 0 }) {
         </div>
         <div>
           <p>Abonados</p>
+          <label>RG6</label>
           <input
             type="text"
             onChange={handleSubscriberCableChange}
             defaultValue={30}
           />
-          <label>m</label>
+        </div>
+        <div>
+          <label>DIV</label>
           <select onChange={handleSubscriberPassiveChange}>
             <option value="1" defaultValue>
               X2

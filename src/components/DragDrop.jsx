@@ -55,28 +55,32 @@ function DragDrop({ handleSequence }) {
         {board.map(({ id, type, color }, index) => {
           if (type != "C") {
             return (
-              <Removable
-                key={`key-${index}`}
-                id={id}
-                index={index}
-                removeElement={removeElement}>
-                <Model
-                  key={`key${index}`}
+              <div className={styles.card}>
+                <Removable
+                  key={`key-${index}`}
                   id={id}
-                  type={type}
-                  dragElement={dragElement}
-                />
-              </Removable>
+                  index={index}
+                  removeElement={removeElement}>
+                  <Model
+                    key={`key${index}`}
+                    id={id}
+                    type={type}
+                    dragElement={dragElement}
+                  />
+                </Removable>
+              </div>
             );
           } else {
             return (
-              <Removable
-                key={`key-${index}`}
-                id={id}
-                index={index}
-                removeElement={removeElement}>
-                <Cable color={color} />
-              </Removable>
+              <div className={styles.card}>
+                <Removable
+                  key={`key-${index}`}
+                  id={id}
+                  index={index}
+                  removeElement={removeElement}>
+                  <Cable color={color} />
+                </Removable>
+              </div>
             );
           }
         })}
