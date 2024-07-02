@@ -55,7 +55,7 @@ function DragDrop({ handleSequence }) {
         {board.map(({ id, type, color }, index) => {
           if (type != "C") {
             return (
-              <div className={styles.card}>
+              <div className={styles.card} key={`key${index * 33}`}>
                 <Removable
                   key={`key-${index}`}
                   id={id}
@@ -72,7 +72,7 @@ function DragDrop({ handleSequence }) {
             );
           } else {
             return (
-              <div className={styles.card}>
+              <div className={styles.card} key={`key${index * 33}`}>
                 <Removable
                   key={`key-${index}`}
                   id={id}
