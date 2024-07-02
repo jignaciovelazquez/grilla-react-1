@@ -31,32 +31,22 @@ function ValuesCard({ sequence }) {
             RH = updateElement[0].R_hight;
             RL = updateElement[0].R_low;
           } else {
-            H = H - updateElement[0].attenuation ;
+            H = H - updateElement[0].attenuation;
             L = L - updateElement[0].attenuation;
             RH = RH + updateElement[0].insertion;
             RL = RL + updateElement[0].insertion;
           }
           if (cableIndex && index > cableIndex) {
-            H = H - (cableMeters * DEFAULT_CABLE_VALUE.attenuation)
-            L = L - (cableMeters * DEFAULT_CABLE_VALUE.attenuation)
+            H = H - cableMeters * DEFAULT_CABLE_VALUE.attenuation;
+            L = L - cableMeters * DEFAULT_CABLE_VALUE.attenuation;
           }
           return (
             <div className={styles.card} key={`key${index + 33}`}>
               <div className={styles.container}>
-                <div>
-                  <p>Abonados</p>
-                  <input type="text" defaultValue={30} />
-                  <label>m</label>
-                  <select>
-                    <option value="value1" defaultValue>
-                      X2
-                    </option>
-                    <option value="value2">X3</option>
-                  </select>
-                </div>
                 <Table
                   key={`key${index + 77}`}
                   name={name}
+                  type={type}
                   H={H}
                   L={L}
                   RH={RH}
@@ -77,7 +67,7 @@ function ValuesCard({ sequence }) {
                     type="number"
                     placeholder="Metros"
                     value={cableMeters}
-                    onChange={e => updateCable(e.target.value)}
+                    onChange={(e) => updateCable(e.target.value)}
                   />
                 </div>
               </div>
