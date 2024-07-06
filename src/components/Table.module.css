@@ -3,11 +3,12 @@
   margin: auto;
   padding: 1px;
   color: white;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .container input {
   width: 3rem;
+  text-align: center;
 }
 
 .container div label {
