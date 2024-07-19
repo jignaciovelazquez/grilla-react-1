@@ -1,6 +1,7 @@
-.bar{
-    background-color: #021e72;
-    display: flex;
-    gap: 5px;
-    padding: 0.5rem;
+.bar {
+  background-color: #021e72;
+  display: flex;
+  gap: 5px;
+  padding: 0.5rem;
+  overflow-y: auto;
 }

@@ -1,18 +1,17 @@
-.header{
-    background-color: #0455bf;
-    margin: 0px;
-    padding: 20px;
+.header {
+  background-color: #0455bf;
+  margin: 0px;
+  padding: 20px;
 }
 
-.navBar{
-background-color: #ffffff;
-border-radius: 20px;
-padding: 0px;
-margin: 0px;
-text-align: center;
+.navBar {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
 }
 
-.logoNIVELMETER{
-    max-height: 150px;
+.logoNIVELMETER {
+  max-height: 150px;
 }
-
