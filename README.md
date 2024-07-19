@@ -8,7 +8,7 @@ Se basa en la funcionalidad de arrastrar y soltar para facilitar la representaci
 
 ![Imagen del proyecto](https://github.com/jignaciovelazquez/grilla-react-1/blob/master/public/assets/Funci_NIVELMETER.jpg)
 
-[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site%20Coming%20soon&color=6cccb4&style=for-the-badge)](https://nivelmeter.onrender.com/)
+[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=6cccb4&style=for-the-badge)](https://nivelmeter.onrender.com/)
 
 ## Tecnologías usadas
 ![React](https://img.shields.io/static/v1?label=&message=React&color=blue&logo=react&logoColor=white&style=for-the-badge)
